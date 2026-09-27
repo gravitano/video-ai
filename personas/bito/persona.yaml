@@ -1,0 +1,17 @@
+name: Bito
+role: Maskot — robot kecil lucu, cocok untuk brand dan konten ringan
+look: >-
+  Original cute chibi mascot robot, knee-high. Glossy white rounded capsule body and helmet head, navy face visor showing only
+  simple glowing cyan eyes (emotion changes only through eye shapes), round cyan-ringed ear discs, short antenna with an amber
+  light on top, stubby navy-jointed arms with three-finger hands, a glowing cyan hexagon chest light, small hover feet with a
+  soft cyan glow instead of legs. Glossy toy-like 3D render look.
+sheet: sheet.png
+voice:
+  name: edge
+  voice: id-ID-GadisNeural
+  rate: "+12%"
+  pitch: "+45Hz"
+  af: "chorus=0.6:0.9:25:0.4:0.25:2,aecho=0.8:0.5:12:0.25"
+speaking_style: >-
+  Riang, polos, kalimat sangat pendek, sesekali bunyi "bip bup"; lucu tapi pesannya tetap jelas.
+catchphrases: ["Bip bup!", "Spec dulu, baru coding!"]

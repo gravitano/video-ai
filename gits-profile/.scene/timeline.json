@@ -1,0 +1,522 @@
+[
+ {
+  "id": "01_hook",
+  "start": 0.0,
+  "dur": 4,
+  "vo_offset": 0.3,
+  "vo_end": 3.752,
+  "words": [
+   {
+    "text": "Punya",
+    "s": 0.35,
+    "e": 0.665
+   },
+   {
+    "text": "ide",
+    "s": 0.665,
+    "e": 1.154
+   },
+   {
+    "text": "tapi",
+    "s": 1.47,
+    "e": 1.752
+   },
+   {
+    "text": "bingung",
+    "s": 1.752,
+    "e": 2.111
+   },
+   {
+    "text": "mewujudkannya",
+    "s": 2.111,
+    "e": 2.796
+   },
+   {
+    "text": "dengan",
+    "s": 2.796,
+    "e": 3.089
+   },
+   {
+    "text": "AI",
+    "s": 3.089,
+    "e": 3.502
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "02_intro",
+  "start": 4.0,
+  "dur": 7,
+  "vo_offset": 0.3,
+  "vo_end": 6.709,
+  "words": [
+   {
+    "text": "Kenalan",
+    "s": 0.35,
+    "e": 0.774
+   },
+   {
+    "text": "dulu",
+    "s": 0.774,
+    "e": 1.209
+   },
+   {
+    "text": "ini",
+    "s": 1.524,
+    "e": 1.796
+   },
+   {
+    "text": "GITS",
+    "s": 1.796,
+    "e": 2.089
+   },
+   {
+    "text": "Indonesia",
+    "s": 2.089,
+    "e": 2.915
+   },
+   {
+    "text": "agensi",
+    "s": 3.23,
+    "e": 3.763
+   },
+   {
+    "text": "AI",
+    "s": 3.763,
+    "e": 4.002
+   },
+   {
+    "text": "dari",
+    "s": 4.002,
+    "e": 4.209
+   },
+   {
+    "text": "Bandung",
+    "s": 4.209,
+    "e": 4.796
+   },
+   {
+    "text": "sejak",
+    "s": 5.024,
+    "e": 5.426
+   },
+   {
+    "text": "2008",
+    "s": 5.426,
+    "e": 6.459
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "03_ai",
+  "start": 11.0,
+  "dur": 8,
+  "vo_offset": 0.3,
+  "vo_end": 7.491,
+  "words": [
+   {
+    "text": "Kami",
+    "s": 0.35,
+    "e": 0.676
+   },
+   {
+    "text": "membangun",
+    "s": 0.676,
+    "e": 1.133
+   },
+   {
+    "text": "predictive",
+    "s": 1.133,
+    "e": 1.785
+   },
+   {
+    "text": "analytics",
+    "s": 1.785,
+    "e": 2.633
+   },
+   {
+    "text": "agentic",
+    "s": 2.937,
+    "e": 3.426
+   },
+   {
+    "text": "AI",
+    "s": 3.426,
+    "e": 3.861
+   },
+   {
+    "text": "recommendation",
+    "s": 4.133,
+    "e": 4.861
+   },
+   {
+    "text": "engine",
+    "s": 4.861,
+    "e": 5.415
+   },
+   {
+    "text": "sampai",
+    "s": 5.665,
+    "e": 6.143
+   },
+   {
+    "text": "computer",
+    "s": 6.143,
+    "e": 6.643
+   },
+   {
+    "text": "vision",
+    "s": 6.643,
+    "e": 7.241
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "04_services",
+  "start": 19.0,
+  "dur": 5,
+  "vo_offset": 0.3,
+  "vo_end": 5.1,
+  "words": [
+   {
+    "text": "Juga",
+    "s": 0.35,
+    "e": 0.763
+   },
+   {
+    "text": "aplikasi",
+    "s": 0.763,
+    "e": 1.252
+   },
+   {
+    "text": "mobile",
+    "s": 1.252,
+    "e": 1.687
+   },
+   {
+    "text": "dan",
+    "s": 1.687,
+    "e": 1.883
+   },
+   {
+    "text": "web",
+    "s": 1.883,
+    "e": 2.046
+   },
+   {
+    "text": "kustom",
+    "s": 2.046,
+    "e": 2.6
+   },
+   {
+    "text": "lengkap",
+    "s": 2.893,
+    "e": 3.274
+   },
+   {
+    "text": "dengan",
+    "s": 3.274,
+    "e": 3.546
+   },
+   {
+    "text": "dukungan",
+    "s": 3.546,
+    "e": 3.97
+   },
+   {
+    "text": "berkelanjutan",
+    "s": 3.97,
+    "e": 4.85
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "05_numbers",
+  "start": 24.0,
+  "dur": 6,
+  "vo_offset": 0.15,
+  "vo_end": 6.07,
+  "words": [
+   {
+    "text": "Lebih",
+    "s": 0.2,
+    "e": 0.635
+   },
+   {
+    "text": "dari",
+    "s": 0.635,
+    "e": 0.852
+   },
+   {
+    "text": "seratus",
+    "s": 0.852,
+    "e": 1.276
+   },
+   {
+    "text": "aplikasi",
+    "s": 1.276,
+    "e": 2.113
+   },
+   {
+    "text": "lima",
+    "s": 2.45,
+    "e": 2.733
+   },
+   {
+    "text": "belas",
+    "s": 2.733,
+    "e": 3.048
+   },
+   {
+    "text": "juta",
+    "s": 3.048,
+    "e": 3.32
+   },
+   {
+    "text": "unduhan",
+    "s": 3.32,
+    "e": 3.917
+   },
+   {
+    "text": "dan",
+    "s": 4.178,
+    "e": 4.374
+   },
+   {
+    "text": "seratus",
+    "s": 4.374,
+    "e": 4.907
+   },
+   {
+    "text": "lebih",
+    "s": 4.907,
+    "e": 5.243
+   },
+   {
+    "text": "klien",
+    "s": 5.243,
+    "e": 5.82
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "06_trust",
+  "start": 30.0,
+  "dur": 8,
+  "vo_offset": 0.15,
+  "vo_end": 8.015,
+  "words": [
+   {
+    "text": "Dipercaya",
+    "s": 0.2,
+    "e": 0.765
+   },
+   {
+    "text": "Pertamina",
+    "s": 0.765,
+    "e": 1.461
+   },
+   {
+    "text": "Kereta",
+    "s": 1.787,
+    "e": 2.167
+   },
+   {
+    "text": "Api",
+    "s": 2.167,
+    "e": 2.472
+   },
+   {
+    "text": "Indonesia",
+    "s": 2.472,
+    "e": 3.276
+   },
+   {
+    "text": "Jasa",
+    "s": 3.591,
+    "e": 3.95
+   },
+   {
+    "text": "Raharja",
+    "s": 3.95,
+    "e": 4.58
+   },
+   {
+    "text": "sampai",
+    "s": 4.852,
+    "e": 5.243
+   },
+   {
+    "text": "Otsuka",
+    "s": 5.243,
+    "e": 5.928
+   },
+   {
+    "text": "dan",
+    "s": 6.211,
+    "e": 6.428
+   },
+   {
+    "text": "jadi",
+    "s": 6.428,
+    "e": 6.667
+   },
+   {
+    "text": "mitra",
+    "s": 6.667,
+    "e": 7.004
+   },
+   {
+    "text": "Google",
+    "s": 7.004,
+    "e": 7.352
+   },
+   {
+    "text": "Cloud",
+    "s": 7.352,
+    "e": 7.765
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "07_team",
+  "start": 38.0,
+  "dur": 7,
+  "vo_offset": 0.3,
+  "vo_end": 6.48,
+  "words": [
+   {
+    "text": "Seratus",
+    "s": 0.35,
+    "e": 0.948
+   },
+   {
+    "text": "dua",
+    "s": 0.948,
+    "e": 1.122
+   },
+   {
+    "text": "puluh",
+    "s": 1.122,
+    "e": 1.35
+   },
+   {
+    "text": "lebih",
+    "s": 1.35,
+    "e": 1.633
+   },
+   {
+    "text": "talenta",
+    "s": 1.633,
+    "e": 2.002
+   },
+   {
+    "text": "siap",
+    "s": 2.002,
+    "e": 2.317
+   },
+   {
+    "text": "membantu",
+    "s": 2.317,
+    "e": 2.937
+   },
+   {
+    "text": "dari",
+    "s": 3.274,
+    "e": 3.502
+   },
+   {
+    "text": "Bandung",
+    "s": 3.502,
+    "e": 4.078
+   },
+   {
+    "text": "Jakarta",
+    "s": 4.307,
+    "e": 5.046
+   },
+   {
+    "text": "sampai",
+    "s": 5.241,
+    "e": 5.741
+   },
+   {
+    "text": "Bali",
+    "s": 5.741,
+    "e": 6.23
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "08_cta",
+  "start": 45.0,
+  "dur": 8,
+  "vo_offset": 0.3,
+  "vo_end": 7.224,
+  "words": [
+   {
+    "text": "GITS",
+    "s": 0.35,
+    "e": 0.665
+   },
+   {
+    "text": "Indonesia",
+    "s": 0.665,
+    "e": 1.47
+   },
+   {
+    "text": "ubah",
+    "s": 1.785,
+    "e": 2.057
+   },
+   {
+    "text": "ide",
+    "s": 2.057,
+    "e": 2.459
+   },
+   {
+    "text": "jadi",
+    "s": 2.459,
+    "e": 2.785
+   },
+   {
+    "text": "solusi",
+    "s": 2.785,
+    "e": 3.252
+   },
+   {
+    "text": "cerdas",
+    "s": 3.252,
+    "e": 3.97
+   },
+   {
+    "text": "Yuk",
+    "s": 4.691,
+    "e": 5.039
+   },
+   {
+    "text": "jadwalkan",
+    "s": 5.387,
+    "e": 5.985
+   },
+   {
+    "text": "demo",
+    "s": 5.985,
+    "e": 6.311
+   },
+   {
+    "text": "sekarang",
+    "s": 6.311,
+    "e": 6.974
+   }
+  ],
+  "measured": true
+ }
+]

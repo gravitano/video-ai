@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s-07-transform-template">
+      <style>
+      #s-07-transform { position:absolute; inset:0; overflow:hidden; background:#0A1428; color:#EAF4F8; }
+      #s-07-transform .cam { position:absolute; inset:0; transform-origin:40% 55%; will-change:transform; }
+      #s-07-transform .drift, #s-07-transform .shake { position:absolute; inset:0; will-change:transform; }
+      #s-07-transform .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s-07-transform .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+          background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s-07-transform .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+          background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s-07-transform .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+          font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; }
+      #s-07-transform .hud .rule { display:block; width:110px; height:3px; transform-origin:0 50%; }
+      #s-07-transform .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+          line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s-07-transform .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s-07-transform .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#3FD8EA; }
+      #s-07-transform .gl { position:relative; display:block; width:940px; }
+      #s-07-transform .gl span, #s-07-transform .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s-07-transform .gl strong { position:relative; }
+      #s-07-transform .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s-07-transform .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s-07-transform-fx0 { position:absolute; left:45%; top:62%; width:900px; height:900px; margin:-450px 0 0 -450px; border-radius:50%; background:radial-gradient(circle, #3FD8EA55 0%, #3FD8EA00 65%); mix-blend-mode:screen; }#s-07-transform-o0 { position:absolute; left:80px; top:300px; width:940px; display:flex; align-items:center; gap:22px;
+        font-family:'Archivo Black', sans-serif; font-size:100px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; }
+      #s-07-transform-o0 .tok { display:block; }
+      #s-07-transform-o0 .arr { display:block; width:70px; height:70px; }#s-07-transform-o1 { position:absolute; left:80px; top:440px; display:flex; align-items:center; gap:18px; padding:16px 30px 16px 20px;
+                border-radius:999px; background:rgba(63,216,234,.16); border:3px solid #3FD8EA; font-family:'JetBrains Mono', monospace;
+                font-weight:700; font-size:34px; color:#EAF4F8; }
+              #s-07-transform-o1 svg { width:44px; height:44px; display:block; }
+      </style>
+      <div id="s-07-transform" data-composition-id="s-07-transform" data-width="1080" data-height="1920" data-duration="6">
+        <div class="cam" id="s-07-transform-cam" data-layout-allow-overflow><div class="drift" id="s-07-transform-drift"><div class="shake" id="s-07-transform-shake"><img class="plate" src="assets/keyframes/07_transform.png" alt="" /></div></div></div><div id="s-07-transform-fx0" data-layout-ignore></div><div class="scrim-top" data-layout-ignore></div><div class="scrim-bot" data-layout-ignore></div><div class="hud" style="color:#3FD8EA"><span class="rule" id="s-07-transform-rule" style="background:#3FD8EA"></span><span id="s-07-transform-hudtxt">07 — TRANSFORM</span></div><div id="s-07-transform-o0"><span class="tok" id="s-07-transform-o0-t0" style="color:#3FD8EA">SPEC</span><span id="s-07-transform-o0-a1"><svg class="arr" viewBox="0 0 70 70"><path d="M8 35 H56 M38 17 L58 35 L38 53" fill="none" stroke="#FFB35C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tok" id="s-07-transform-o0-t1" style="color:#EAF4F8">AI</span><span id="s-07-transform-o0-a2"><svg class="arr" viewBox="0 0 70 70"><path d="M8 35 H56 M38 17 L58 35 L38 53" fill="none" stroke="#FFB35C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tok" id="s-07-transform-o0-t2" style="color:#EAF4F8">APP</span></div><div id="s-07-transform-o1"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#3FD8EA"/><path d="M12 23 L19 30 L32 15" fill="none" stroke="#0A1428" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>tiap langkah bisa dicek</span></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s-07-transform-cam", { scale:1.08, x:-26, y:0 }, { scale:1.14, x:26, y:0, duration:6, ease:"sine.inOut" }, 0);
+          tl.fromTo("#s-07-transform-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:3.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-07-transform-fx0", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:3.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-07-transform-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.080);
+          tl.fromTo("#s-07-transform-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.200);
+          tl.fromTo("#s-07-transform-o0-t0", { opacity:0, scale:1.4 }, { opacity:1, scale:1, duration:.3, ease:"power4.out" }, 0.300);
+          tl.fromTo("#s-07-transform-o0-a1", { opacity:0, x:-30 }, { opacity:1, x:0, duration:.3, ease:"expo.out" }, 0.350);
+          tl.fromTo("#s-07-transform-o0-t1", { opacity:0, scale:1.4 }, { opacity:1, scale:1, duration:.3, ease:"power4.out" }, 0.500);
+          tl.fromTo("#s-07-transform-o0-a2", { opacity:0, x:-30 }, { opacity:1, x:0, duration:.3, ease:"expo.out" }, 2.050);
+          tl.fromTo("#s-07-transform-o0-t2", { opacity:0, scale:1.4 }, { opacity:1, scale:1, duration:.3, ease:"power4.out" }, 2.200);
+          tl.fromTo("#s-07-transform-o1", { opacity:0, y:30, scale:.9 }, { opacity:1, y:0, scale:1, duration:.45, ease:"back.out(2)" }, 4.450);
+          window.__timelines["s-07-transform"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

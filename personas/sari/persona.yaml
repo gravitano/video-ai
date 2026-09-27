@@ -1,0 +1,12 @@
+name: Sari
+role: Mentor — tenang, jelas, bikin konsep teknis terasa mudah
+look: >-
+  Original anime-style woman tech mentor about 26. Chin-length black bob with a single cyan streak on the left, large round
+  thin gold-framed glasses, dark brown eyes, warm smile. Oversized cream knit hoodie with navy cuffs over a navy turtleneck,
+  short navy pleated skirt, black leggings, chunky white sneakers. Often holds a slim translucent holographic tablet glowing cyan.
+  Modern anime key-visual style, soft cel shading.
+sheet: sheet.png
+voice: {name: edge, voice: id-ID-GadisNeural, rate: "+6%"}
+speaking_style: >-
+  Kalem, runtut, ramah; menjelaskan dengan analogi sehari-hari; menutup dengan satu kalimat rangkuman.
+catchphrases: ["Kita tulis spec-nya dulu, ya.", "Jelas tujuannya, jelas selesainya."]

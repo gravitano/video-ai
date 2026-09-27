@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s-02-setup-template">
+      <style>
+      #s-02-setup { position:absolute; inset:0; overflow:hidden; background:#0A1428; color:#EAF4F8; }
+      #s-02-setup .cam { position:absolute; inset:0; transform-origin:50% 45%; will-change:transform; }
+      #s-02-setup .drift, #s-02-setup .shake { position:absolute; inset:0; will-change:transform; }
+      #s-02-setup .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s-02-setup .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+          background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s-02-setup .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+          background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s-02-setup .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+          font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; }
+      #s-02-setup .hud .rule { display:block; width:110px; height:3px; transform-origin:0 50%; }
+      #s-02-setup .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+          line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s-02-setup .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s-02-setup .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#3FD8EA; }
+      #s-02-setup .gl { position:relative; display:block; width:940px; }
+      #s-02-setup .gl span, #s-02-setup .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s-02-setup .gl strong { position:relative; }
+      #s-02-setup .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s-02-setup .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s-02-setup-fx0 { position:absolute; left:60%; top:38%; width:900px; height:900px; margin:-450px 0 0 -450px; border-radius:50%; background:radial-gradient(circle, #3FD8EA55 0%, #3FD8EA00 65%); mix-blend-mode:screen; }#s-02-setup-fx1 { position:absolute; left:80px; top:372px; width:560px; display:flex; flex-direction:column; gap:14px; }
+              #s-02-setup-fx1 .bar { display:block; height:12px; border-radius:6px; background:#3FD8EA; opacity:.85; transform-origin:0 50%; }
+      </style>
+      <div id="s-02-setup" data-composition-id="s-02-setup" data-width="1080" data-height="1920" data-duration="5">
+        <div class="cam" id="s-02-setup-cam" data-layout-allow-overflow><div class="drift" id="s-02-setup-drift"><div class="shake" id="s-02-setup-shake"><img class="plate" src="assets/keyframes/02_setup.png" alt="" /></div></div></div><div id="s-02-setup-fx0" data-layout-ignore></div><div id="s-02-setup-fx1"><span class="bar" id="s-02-setup-fx1-b0" style="width:520px"></span><span class="bar" id="s-02-setup-fx1-b1" style="width:380px"></span><span class="bar" id="s-02-setup-fx1-b2" style="width:460px"></span><span class="bar" id="s-02-setup-fx1-b3" style="width:300px"></span><span class="bar" id="s-02-setup-fx1-b4" style="width:540px"></span><span class="bar" id="s-02-setup-fx1-b5" style="width:410px"></span><span class="bar" id="s-02-setup-fx1-b6" style="width:250px"></span><span class="bar" id="s-02-setup-fx1-b7" style="width:480px"></span></div><div class="scrim-top" data-layout-ignore></div><div class="scrim-bot" data-layout-ignore></div><div class="hud" style="color:#3FD8EA"><span class="rule" id="s-02-setup-rule" style="background:#3FD8EA"></span><span id="s-02-setup-hudtxt">02 — SETUP</span></div><div class="hl mono" id="s-02-setup-o0" style="top:300px; font-size:44px; color:#3FD8EA;"><span id="s-02-setup-o0-txt"></span><span class="caret" id="s-02-setup-o0-caret"></span></div><div class="hl" id="s-02-setup-o1" style="top:292px; font-size:164px; color:#FFB35C;">TAPI...</div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s-02-setup-cam", { scale:1.12, x:44, y:0 }, { scale:1.12, x:-44, y:0, duration:5, ease:"sine.inOut" }, 0);
+          tl.fromTo("#s-02-setup-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-02-setup-fx0", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-02-setup-fx1-b0", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 1.350);
+          tl.fromTo("#s-02-setup-fx1-b1", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 1.570);
+          tl.fromTo("#s-02-setup-fx1-b2", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 1.790);
+          tl.fromTo("#s-02-setup-fx1-b3", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 2.010);
+          tl.fromTo("#s-02-setup-fx1-b4", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 2.230);
+          tl.fromTo("#s-02-setup-fx1-b5", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 2.450);
+          tl.fromTo("#s-02-setup-fx1-b6", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 2.670);
+          tl.fromTo("#s-02-setup-fx1-b7", { scaleX:0 }, { scaleX:1, duration:.3, ease:"power3.out" }, 2.890);
+          tl.to("#s-02-setup-fx1", { opacity:0, y:-20, duration:.22, ease:"power2.in" }, 3.550);
+          tl.fromTo("#s-02-setup-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.080);
+          tl.fromTo("#s-02-setup-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.200);
+          (function(){ const full = "> ai.generate(code)"; const el = document.getElementById("s-02-setup-o0-txt"); const p = { n:0 };
+            el.textContent = "";
+            tl.fromTo(p, { n:0 }, { n:full.length, duration:1.10, ease:"none", onUpdate(){ el.textContent = full.slice(0, Math.round(p.n)); } }, 0.250);
+            tl.fromTo("#s-02-setup-o0-caret", { opacity:1 }, { opacity:0, duration:.28, ease:"steps(1)", yoyo:true, repeat:9 }, 0.250);
+          })();
+          tl.to("#s-02-setup-o0", { opacity:0, y:-20, duration:.22, ease:"power2.in" }, 3.550);
+          tl.fromTo("#s-02-setup-o1", { opacity:0, x:-140 }, { opacity:1, x:0, duration:.42, ease:"expo.out" }, 3.770);
+          window.__timelines["s-02-setup"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

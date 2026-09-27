@@ -1,0 +1,452 @@
+[
+ {
+  "id": "01_hook",
+  "start": 0.0,
+  "dur": 4,
+  "vo_offset": 0.3,
+  "vo_end": 3.111,
+  "words": [
+   {
+    "text": "AI",
+    "s": 0.35,
+    "e": 0.535
+   },
+   {
+    "text": "sekarang",
+    "s": 0.535,
+    "e": 1.002
+   },
+   {
+    "text": "bisa",
+    "s": 1.002,
+    "e": 1.263
+   },
+   {
+    "text": "nulis",
+    "s": 1.263,
+    "e": 1.578
+   },
+   {
+    "text": "kode",
+    "s": 1.578,
+    "e": 1.97
+   },
+   {
+    "text": "secepat",
+    "s": 1.97,
+    "e": 2.47
+   },
+   {
+    "text": "kilat",
+    "s": 2.47,
+    "e": 2.861
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "02_setup",
+  "start": 4.0,
+  "dur": 6,
+  "vo_offset": 0.3,
+  "vo_end": 5.463,
+  "words": [
+   {
+    "text": "Tinggal",
+    "s": 0.35,
+    "e": 0.73
+   },
+   {
+    "text": "ketik",
+    "s": 0.73,
+    "e": 1.035
+   },
+   {
+    "text": "prompt",
+    "s": 1.035,
+    "e": 1.48
+   },
+   {
+    "text": "ratusan",
+    "s": 1.741,
+    "e": 2.241
+   },
+   {
+    "text": "baris",
+    "s": 2.241,
+    "e": 2.546
+   },
+   {
+    "text": "kode",
+    "s": 2.546,
+    "e": 2.872
+   },
+   {
+    "text": "langsung",
+    "s": 2.872,
+    "e": 3.339
+   },
+   {
+    "text": "jadi",
+    "s": 3.339,
+    "e": 3.839
+   },
+   {
+    "text": "Tapi",
+    "s": 4.561,
+    "e": 5.213
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "03_problem",
+  "start": 10.0,
+  "dur": 7,
+  "vo_offset": 0.3,
+  "vo_end": 6.256,
+  "words": [
+   {
+    "text": "AI",
+    "s": 0.35,
+    "e": 0.535
+   },
+   {
+    "text": "nggak",
+    "s": 0.535,
+    "e": 0.763
+   },
+   {
+    "text": "tahu",
+    "s": 0.763,
+    "e": 1.046
+   },
+   {
+    "text": "apa",
+    "s": 1.046,
+    "e": 1.415
+   },
+   {
+    "text": "yang",
+    "s": 1.415,
+    "e": 1.546
+   },
+   {
+    "text": "sebenarnya",
+    "s": 1.546,
+    "e": 2.067
+   },
+   {
+    "text": "kamu",
+    "s": 2.067,
+    "e": 2.404
+   },
+   {
+    "text": "mau",
+    "s": 2.404,
+    "e": 2.85
+   },
+   {
+    "text": "Hasilnya",
+    "s": 3.572,
+    "e": 4.463
+   },
+   {
+    "text": "Error",
+    "s": 5.191,
+    "e": 6.006
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "04_escalation",
+  "start": 17.0,
+  "dur": 5,
+  "vo_offset": 0.3,
+  "vo_end": 4.644,
+  "words": [
+   {
+    "text": "Ibarat",
+    "s": 0.35,
+    "e": 0.785
+   },
+   {
+    "text": "bangun",
+    "s": 0.785,
+    "e": 1.111
+   },
+   {
+    "text": "rumah",
+    "s": 1.111,
+    "e": 1.415
+   },
+   {
+    "text": "tanpa",
+    "s": 1.415,
+    "e": 1.752
+   },
+   {
+    "text": "denah",
+    "s": 1.752,
+    "e": 2.23
+   },
+   {
+    "text": "makin",
+    "s": 2.524,
+    "e": 2.85
+   },
+   {
+    "text": "cepat",
+    "s": 2.85,
+    "e": 3.198
+   },
+   {
+    "text": "makin",
+    "s": 3.448,
+    "e": 3.872
+   },
+   {
+    "text": "salah",
+    "s": 3.872,
+    "e": 4.394
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "05_solution",
+  "start": 22.0,
+  "dur": 4,
+  "vo_offset": 0.3,
+  "vo_end": 3.578,
+  "words": [
+   {
+    "text": "Jadi",
+    "s": 0.35,
+    "e": 0.948
+   },
+   {
+    "text": "kita",
+    "s": 1.285,
+    "e": 1.535
+   },
+   {
+    "text": "tulis",
+    "s": 1.535,
+    "e": 1.817
+   },
+   {
+    "text": "spec-nya",
+    "s": 1.817,
+    "e": 2.23
+   },
+   {
+    "text": "dulu",
+    "s": 2.23,
+    "e": 2.698
+   },
+   {
+    "text": "ya",
+    "s": 2.937,
+    "e": 3.328
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "06_spec",
+  "start": 26.0,
+  "dur": 6,
+  "vo_offset": 0.3,
+  "vo_end": 5.85,
+  "words": [
+   {
+    "text": "Spec",
+    "s": 0.35,
+    "e": 0.752
+   },
+   {
+    "text": "berisi",
+    "s": 0.752,
+    "e": 1.111
+   },
+   {
+    "text": "requirement",
+    "s": 1.111,
+    "e": 1.904
+   },
+   {
+    "text": "alur",
+    "s": 2.241,
+    "e": 2.72
+   },
+   {
+    "text": "aturan",
+    "s": 3.013,
+    "e": 3.415
+   },
+   {
+    "text": "bisnis",
+    "s": 3.415,
+    "e": 4.035
+   },
+   {
+    "text": "dan",
+    "s": 4.263,
+    "e": 4.491
+   },
+   {
+    "text": "kriteria",
+    "s": 4.491,
+    "e": 5.035
+   },
+   {
+    "text": "terima",
+    "s": 5.035,
+    "e": 5.6
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "07_transform",
+  "start": 32.0,
+  "dur": 5,
+  "vo_offset": 0.15,
+  "vo_end": 4.874,
+  "words": [
+   {
+    "text": "Lalu",
+    "s": 0.2,
+    "e": 0.57
+   },
+   {
+    "text": "AI",
+    "s": 0.57,
+    "e": 0.776
+   },
+   {
+    "text": "mengerjakannya",
+    "s": 0.776,
+    "e": 1.417
+   },
+   {
+    "text": "langkah",
+    "s": 1.417,
+    "e": 1.82
+   },
+   {
+    "text": "demi",
+    "s": 1.82,
+    "e": 2.037
+   },
+   {
+    "text": "langkah",
+    "s": 2.037,
+    "e": 2.58
+   },
+   {
+    "text": "dan",
+    "s": 2.874,
+    "e": 3.08
+   },
+   {
+    "text": "tiap",
+    "s": 3.08,
+    "e": 3.33
+   },
+   {
+    "text": "langkah",
+    "s": 3.33,
+    "e": 3.743
+   },
+   {
+    "text": "bisa",
+    "s": 3.743,
+    "e": 4.091
+   },
+   {
+    "text": "kamu",
+    "s": 4.091,
+    "e": 4.341
+   },
+   {
+    "text": "cek",
+    "s": 4.341,
+    "e": 4.624
+   }
+  ],
+  "measured": true
+ },
+ {
+  "id": "08_result",
+  "start": 37.0,
+  "dur": 8,
+  "vo_offset": 0.1,
+  "vo_end": 7.98,
+  "words": [
+   {
+    "text": "Itulah",
+    "s": 0.15,
+    "e": 0.563
+   },
+   {
+    "text": "Spec",
+    "s": 0.563,
+    "e": 0.867
+   },
+   {
+    "text": "Driven",
+    "s": 0.867,
+    "e": 1.302
+   },
+   {
+    "text": "Development",
+    "s": 1.302,
+    "e": 2.085
+   },
+   {
+    "text": "Jelas",
+    "s": 2.807,
+    "e": 3.176
+   },
+   {
+    "text": "tujuannya",
+    "s": 3.176,
+    "e": 3.915
+   },
+   {
+    "text": "jelas",
+    "s": 4.165,
+    "e": 4.502
+   },
+   {
+    "text": "selesainya",
+    "s": 4.502,
+    "e": 5.306
+   },
+   {
+    "text": "Coba",
+    "s": 6.035,
+    "e": 6.437
+   },
+   {
+    "text": "di",
+    "s": 6.437,
+    "e": 6.557
+   },
+   {
+    "text": "proyek",
+    "s": 6.557,
+    "e": 6.98
+   },
+   {
+    "text": "berikutnya",
+    "s": 6.98,
+    "e": 7.73
+   }
+  ],
+  "measured": true
+ }
+]

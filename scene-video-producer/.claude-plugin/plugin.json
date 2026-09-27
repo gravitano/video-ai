@@ -1,0 +1,5 @@
+{
+  "name": "scene-video-producer",
+  "description": "Plan and produce short-form AI videos with the S.C.E.N.E. workflow — from brief to rendered MP4 via the scene pipeline (MiniMax H3 image-to-video, HyperFrames assembly).",
+  "version": "1.1.0"
+}

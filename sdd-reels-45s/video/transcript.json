@@ -1,0 +1,530 @@
+[
+ {
+  "text": "AI",
+  "start": 0.45,
+  "end": 0.684,
+  "line": 1
+ },
+ {
+  "text": "sekarang",
+  "start": 0.684,
+  "end": 1.019,
+  "line": 1
+ },
+ {
+  "text": "bisa",
+  "start": 1.019,
+  "end": 1.198,
+  "line": 1
+ },
+ {
+  "text": "nulis",
+  "start": 1.198,
+  "end": 1.41,
+  "line": 1
+ },
+ {
+  "text": "kode",
+  "start": 1.41,
+  "end": 1.655,
+  "line": 1
+ },
+ {
+  "text": "secepat",
+  "start": 1.655,
+  "end": 2.001,
+  "line": 1
+ },
+ {
+  "text": "kilat",
+  "start": 2.001,
+  "end": 2.437,
+  "line": 1
+ },
+ {
+  "text": "Tinggal",
+  "start": 4.35,
+  "end": 4.662,
+  "line": 2
+ },
+ {
+  "text": "ketik",
+  "start": 4.662,
+  "end": 4.863,
+  "line": 2
+ },
+ {
+  "text": "prompt",
+  "start": 4.863,
+  "end": 5.232,
+  "line": 2
+ },
+ {
+  "text": "ratusan",
+  "start": 5.444,
+  "end": 5.834,
+  "line": 2
+ },
+ {
+  "text": "baris",
+  "start": 5.834,
+  "end": 6.035,
+  "line": 2
+ },
+ {
+  "text": "kode",
+  "start": 6.035,
+  "end": 6.247,
+  "line": 2
+ },
+ {
+  "text": "langsung",
+  "start": 6.247,
+  "end": 6.571,
+  "line": 2
+ },
+ {
+  "text": "jadi",
+  "start": 6.571,
+  "end": 7.029,
+  "line": 2
+ },
+ {
+  "text": "Tapi",
+  "start": 7.774,
+  "end": 8.432,
+  "line": 2
+ },
+ {
+  "text": "AI",
+  "start": 9.45,
+  "end": 9.662,
+  "line": 3
+ },
+ {
+  "text": "nggak",
+  "start": 9.662,
+  "end": 9.807,
+  "line": 3
+ },
+ {
+  "text": "tahu",
+  "start": 9.807,
+  "end": 10.064,
+  "line": 3
+ },
+ {
+  "text": "apa",
+  "start": 10.064,
+  "end": 10.242,
+  "line": 3
+ },
+ {
+  "text": "yang",
+  "start": 10.242,
+  "end": 10.343,
+  "line": 3
+ },
+ {
+  "text": "sebenarnya",
+  "start": 10.343,
+  "end": 10.8,
+  "line": 3
+ },
+ {
+  "text": "kamu",
+  "start": 10.8,
+  "end": 11.012,
+  "line": 3
+ },
+ {
+  "text": "mau",
+  "start": 11.012,
+  "end": 11.358,
+  "line": 3
+ },
+ {
+  "text": "Hasilnya",
+  "start": 12.102,
+  "end": 12.861,
+  "line": 3
+ },
+ {
+  "text": "Error",
+  "start": 13.609,
+  "end": 14.256,
+  "line": 3
+ },
+ {
+  "text": "Makin",
+  "start": 15.35,
+  "end": 15.629,
+  "line": 4
+ },
+ {
+  "text": "cepat",
+  "start": 15.629,
+  "end": 15.841,
+  "line": 4
+ },
+ {
+  "text": "kamu",
+  "start": 15.841,
+  "end": 15.986,
+  "line": 4
+ },
+ {
+  "text": "nge-prompt",
+  "start": 15.986,
+  "end": 16.488,
+  "line": 4
+ },
+ {
+  "text": "makin",
+  "start": 16.723,
+  "end": 16.946,
+  "line": 4
+ },
+ {
+  "text": "cepat",
+  "start": 16.946,
+  "end": 17.169,
+  "line": 4
+ },
+ {
+  "text": "juga",
+  "start": 17.169,
+  "end": 17.381,
+  "line": 4
+ },
+ {
+  "text": "kamu",
+  "start": 17.381,
+  "end": 17.549,
+  "line": 4
+ },
+ {
+  "text": "bikin",
+  "start": 17.549,
+  "end": 17.772,
+  "line": 4
+ },
+ {
+  "text": "hal",
+  "start": 17.772,
+  "end": 17.906,
+  "line": 4
+ },
+ {
+  "text": "yang",
+  "start": 17.906,
+  "end": 18.017,
+  "line": 4
+ },
+ {
+  "text": "salah",
+  "start": 18.017,
+  "end": 18.486,
+  "line": 4
+ },
+ {
+  "text": "Solusinya",
+  "start": 20.65,
+  "end": 21.398,
+  "line": 5
+ },
+ {
+  "text": "sebelum",
+  "start": 21.632,
+  "end": 21.967,
+  "line": 5
+ },
+ {
+  "text": "coding",
+  "start": 21.967,
+  "end": 22.425,
+  "line": 5
+ },
+ {
+  "text": "tulis",
+  "start": 22.648,
+  "end": 22.882,
+  "line": 5
+ },
+ {
+  "text": "spec",
+  "start": 22.882,
+  "end": 23.083,
+  "line": 5
+ },
+ {
+  "text": "dulu",
+  "start": 23.083,
+  "end": 23.496,
+  "line": 5
+ },
+ {
+  "text": "Spec",
+  "start": 25.05,
+  "end": 25.273,
+  "line": 6
+ },
+ {
+  "text": "itu",
+  "start": 25.273,
+  "end": 25.496,
+  "line": 6
+ },
+ {
+  "text": "berisi",
+  "start": 25.496,
+  "end": 25.775,
+  "line": 6
+ },
+ {
+  "text": "requirement",
+  "start": 25.775,
+  "end": 26.423,
+  "line": 6
+ },
+ {
+  "text": "alur",
+  "start": 26.657,
+  "end": 27.104,
+  "line": 6
+ },
+ {
+  "text": "aturan",
+  "start": 27.316,
+  "end": 27.628,
+  "line": 6
+ },
+ {
+  "text": "bisnis",
+  "start": 27.628,
+  "end": 28.13,
+  "line": 6
+ },
+ {
+  "text": "dan",
+  "start": 28.309,
+  "end": 28.543,
+  "line": 6
+ },
+ {
+  "text": "kriteria",
+  "start": 28.543,
+  "end": 28.889,
+  "line": 6
+ },
+ {
+  "text": "terima",
+  "start": 28.889,
+  "end": 29.358,
+  "line": 6
+ },
+ {
+  "text": "Jelas",
+  "start": 30.103,
+  "end": 30.404,
+  "line": 6
+ },
+ {
+  "text": "apa",
+  "start": 30.404,
+  "end": 30.583,
+  "line": 6
+ },
+ {
+  "text": "yang",
+  "start": 30.583,
+  "end": 30.706,
+  "line": 6
+ },
+ {
+  "text": "dibangun",
+  "start": 30.706,
+  "end": 31.264,
+  "line": 6
+ },
+ {
+  "text": "dan",
+  "start": 31.521,
+  "end": 31.721,
+  "line": 6
+ },
+ {
+  "text": "kapan",
+  "start": 31.721,
+  "end": 31.978,
+  "line": 6
+ },
+ {
+  "text": "dianggap",
+  "start": 31.978,
+  "end": 32.279,
+  "line": 6
+ },
+ {
+  "text": "selesai",
+  "start": 32.279,
+  "end": 32.838,
+  "line": 6
+ },
+ {
+  "text": "Lalu",
+  "start": 33.25,
+  "end": 33.484,
+  "line": 7
+ },
+ {
+  "text": "AI",
+  "start": 33.484,
+  "end": 33.652,
+  "line": 7
+ },
+ {
+  "text": "mengimplementasikan",
+  "start": 33.652,
+  "end": 34.377,
+  "line": 7
+ },
+ {
+  "text": "spec",
+  "start": 34.377,
+  "end": 34.578,
+  "line": 7
+ },
+ {
+  "text": "itu",
+  "start": 34.578,
+  "end": 34.991,
+  "line": 7
+ },
+ {
+  "text": "langkah",
+  "start": 35.248,
+  "end": 35.527,
+  "line": 7
+ },
+ {
+  "text": "demi",
+  "start": 35.527,
+  "end": 35.683,
+  "line": 7
+ },
+ {
+  "text": "langkah",
+  "start": 35.683,
+  "end": 36.185,
+  "line": 7
+ },
+ {
+  "text": "dan",
+  "start": 36.397,
+  "end": 36.598,
+  "line": 7
+ },
+ {
+  "text": "tiap",
+  "start": 36.598,
+  "end": 36.777,
+  "line": 7
+ },
+ {
+  "text": "langkah",
+  "start": 36.777,
+  "end": 37.056,
+  "line": 7
+ },
+ {
+  "text": "bisa",
+  "start": 37.056,
+  "end": 37.268,
+  "line": 7
+ },
+ {
+  "text": "kamu",
+  "start": 37.268,
+  "end": 37.469,
+  "line": 7
+ },
+ {
+  "text": "cek",
+  "start": 37.469,
+  "end": 37.748,
+  "line": 7
+ },
+ {
+  "text": "Itulah",
+  "start": 39.05,
+  "end": 39.429,
+  "line": 8
+ },
+ {
+  "text": "Spec",
+  "start": 39.429,
+  "end": 39.664,
+  "line": 8
+ },
+ {
+  "text": "Driven",
+  "start": 39.664,
+  "end": 40.01,
+  "line": 8
+ },
+ {
+  "text": "Development",
+  "start": 40.01,
+  "end": 40.679,
+  "line": 8
+ },
+ {
+  "text": "Coba",
+  "start": 41.422,
+  "end": 41.667,
+  "line": 8
+ },
+ {
+  "text": "di",
+  "start": 41.667,
+  "end": 41.746,
+  "line": 8
+ },
+ {
+  "text": "proyek",
+  "start": 41.746,
+  "end": 42.002,
+  "line": 8
+ },
+ {
+  "text": "berikutnya",
+  "start": 42.002,
+  "end": 42.627,
+  "line": 8
+ },
+ {
+  "text": "spec",
+  "start": 42.862,
+  "end": 43.129,
+  "line": 8
+ },
+ {
+  "text": "dulu",
+  "start": 43.129,
+  "end": 43.565,
+  "line": 8
+ },
+ {
+  "text": "baru",
+  "start": 43.766,
+  "end": 44.011,
+  "line": 8
+ },
+ {
+  "text": "coding",
+  "start": 44.011,
+  "end": 44.48,
+  "line": 8
+ }
+]

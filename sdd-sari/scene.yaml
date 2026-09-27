@@ -1,0 +1,238 @@
+# SDD Reels 45s — versi persona Sari (pemandu), anime style.
+persona: ../personas/sari
+project: sdd-sari
+brief:
+  topic: Spec Driven Development
+  audience: Developer dan vibe coder
+  platform: reels
+  duration: 45
+  language: id
+  message: Tulis spec sebelum AI coding
+  cta: Coba workflow berbasis spec di proyek berikutnya
+
+format: {width: 1080, height: 1920, fps: 30}
+
+style:
+  reference_prompt: >-
+    Anime key-visual establishing frame: the persona stands beside her desk in a cozy nighttime tech studio — dark navy walls,
+    a large window with blurred city lights, a desk with a silver laptop and two monitors glowing with abstract cyan code, a warm
+    amber desk lamp, a small plant. Palette: navy, cyan, soft amber. Vertical 9:16, medium-full shot, face clearly visible,
+    empty space at top and bottom for overlays. No readable text, captions, logos, or watermarks.
+  consistency: >-
+    Same anime key-visual rendering style, same nighttime navy/cyan/amber tech studio as the approved scene reference.
+    Vertical 9:16 with empty space at top and bottom for overlays. No readable text, letters, captions, logos, or watermarks.
+
+providers:
+  image: {name: codex}
+  voice: {rate: "+15%"}          # persona Sari, sedikit lebih cepat untuk format 45 detik
+  video: {name: minimax, model: MiniMax-H3, resolution: 768P, prompt_expansion: disabled}
+  music: {name: synth, turn_at_shot: 05_solution}
+
+budget: {video_usd: 5}
+
+captions:
+  zone: bottom
+  max_words: 4
+  keywords: {spec: accent, spec-nya: accent, error: danger, salah: danger, development: accent}
+
+audio: {music_volume: 0.5, carve: true}
+
+shots:
+  - id: 01_hook
+    duration: 4
+    vo: "AI sekarang bisa nulis kode secepat kilat."
+    keyframe_prompt: >-
+      Shot 01 (hook): Sari sits at the desk typing fast on the laptop, streams of abstract cyan code light reflecting on her
+      round glasses, excited bright smile. Three-quarter close-medium shot from the left, hands and face in frame.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari types rapidly and glances up with an excited smile. Camera: slow push-in.
+      Environment: cyan code light scrolls across her glasses and face. Preserve her exact face, hair with cyan streak, glasses,
+      cream hoodie, the studio and the anime style. No new text, subtitles, logos, scene transitions, or cuts.
+    camera: {from: 1.10, to: 1.22, origin: "45% 42%"}
+    hud: {text: "01 — HOOK", color: accent}
+    overlays:
+      - {type: headline, text: "AI CODING", top: 960, size: 124, color: ink, at: "w:kode", anim: slam, plate: true}
+      - {type: headline, text: "= CEPAT", top: 1090, size: 124, color: accent, at: "w:secepat", anim: slam, plate: true}
+    fx: [{type: glow, x: "75%", y: "45%", color: accent}]
+    sfx:
+      - {at: 0.05, name: typing, vol: 0.4}
+      - {at: "w:kode", name: whoosh-short, vol: 0.5}
+      - {at: "w:secepat", name: impact-bass-2, vol: 0.3}
+
+  - id: 02_setup
+    duration: 6
+    vo: "Tinggal ketik prompt, ratusan baris kode langsung jadi. Tapi..."
+    keyframe_prompt: >-
+      Shot 02 (setup): Sari leans back in her chair holding her translucent holographic tablet; above the desk float cascades of
+      abstract glowing cyan code blocks (no readable characters); pleased, relaxed expression. Over-the-shoulder medium shot.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari leans back and smiles while code blocks cascade upward from her tablet.
+      Camera: slow dolly to the right. Preserve her exact design and the studio. No new text, subtitles, logos, or cuts.
+    camera: {from: 1.12, to: 1.12, x: [44, -44], origin: "50% 45%"}
+    hud: {text: "02 — SETUP", color: accent}
+    overlays:
+      - {type: headline, text: "> ai.generate(code)", top: 300, size: 44, color: accent, at: 0.25, anim: type, out: "w:Tapi-0.25"}
+      - {type: headline, text: "TAPI...", top: 292, size: 170, color: warm, at: "w:Tapi", anim: snap}
+    fx:
+      - {type: glow, x: "60%", y: "38%", color: accent}
+      - {type: bars, top: 372, at: 1.3, step: 0.22, out: "w:Tapi-0.25", widths: [520, 380, 460, 300, 540, 410, 250, 480]}
+    sfx:
+      - {at: 0.3, name: key-press, vol: 0.5}
+      - {at: 1.3, name: sparkle, vol: 0.3}
+      - {at: "w:Tapi-0.05", name: whoosh, vol: 0.55}
+
+  - id: 03_problem
+    duration: 7
+    vo: "AI nggak tahu apa yang sebenarnya kamu mau. Hasilnya? Error."
+    keyframe_prompt: >-
+      Shot 03 (problem): the monitors have turned harsh red with abstract warning shapes (no text); Sari looks at them puzzled,
+      finger on her chin, red light on her face and glasses. Frontal medium shot.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari frowns and tilts her head while the red screens pulse. Camera: subtle handheld
+      drift. Preserve her exact design and the studio. No new text, subtitles, logos, or cuts.
+    camera: {from: 1.10, to: 1.18, origin: "55% 40%"}
+    hud: {text: "03 — PROBLEM", color: danger}
+    overlays:
+      - {type: headline, text: "AI NGGAK TAHU", top: 960, size: 104, color: ink, at: "w:tahu", anim: rise, out: "w:Error-0.15", plate: true}
+      - {type: headline, text: "MAUMU", top: 1080, size: 104, color: danger, at: "w:mau", anim: rise, out: "w:Error-0.15", plate: true}
+      - {type: headline, text: "ERROR", top: 980, size: 210, color: danger, at: "w:Error", anim: glitch, plate: true}
+    fx:
+      - {type: glow, x: "80%", y: "34%", color: danger}
+      - {type: alarm, pulses: [[0.2, 0.3], ["w:Hasilnya", 0.3], ["w:Error", 0.55]], shake_at: "w:Error"}
+    sfx:
+      - {at: 0.0, name: glitch-1, vol: 0.35}
+      - {at: "w:Error-0.05", name: error, vol: 0.5}
+      - {at: "w:Error", name: glitch-2, vol: 0.35}
+
+  - id: 04_escalation
+    duration: 5
+    vo: "Ibarat bangun rumah tanpa denah: makin cepat, makin salah."
+    keyframe_prompt: >-
+      Shot 04 (escalation): the studio is overwhelmed by many floating red holographic panels and tangled, broken flow lines
+      swirling around Sari; she holds her head with both hands, comically overwhelmed. Wide shot, slightly high angle.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari shakes her head as red panels multiply and drift around her. Camera: slow
+      pull-out. Preserve her exact design and the studio. No new text, subtitles, logos, or cuts.
+    camera: {from: 1.26, to: 1.04, origin: "50% 55%", ease: power2.out}
+    hud: {text: "04 — ESCALATION", color: danger}
+    overlays:
+      - {type: headline, text: "TANPA DENAH", top: 960, size: 118, color: ink, at: "w:tanpa", anim: snap, plate: true}
+      - {type: headline, text: "MAKIN SALAH", top: 1090, size: 118, color: danger, at: "w:salah", anim: glitch, plate: true}
+    fx:
+      - {type: glow, x: "30%", y: "30%", color: danger}
+      - {type: alarm, pulses: [[0.1, 0.25], ["w:denah", 0.3], ["w:cepat", 0.35], ["w:salah", 0.5]], shake_at: "w:salah"}
+      - {type: flash_out, dur: 0.22}
+    sfx:
+      - {at: 0.0, name: glitch-1, vol: 0.35}
+      - {at: 0.0, name: riser, vol: 0.4, media_start: 5, dur: 5}
+      - {at: "w:salah-0.05", name: impact-bass-1, vol: 0.5}
+
+  - id: 05_solution
+    duration: 4
+    vo: "Jadi, kita tulis spec-nya dulu, ya."
+    keyframe_prompt: >-
+      Shot 05 (solution): calm after the chaos — the red panels are gone; Sari stands, pushes her glasses up with one finger and
+      holds her holographic tablet forward, projecting a clean glowing cyan blueprint of four connected empty modules with flow
+      arrows and check marks (no text). Calm confident smile. Medium shot.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari pushes up her glasses and smiles as the four cyan modules light up one by one.
+      Camera: gentle push-in. Preserve her exact design and the studio. No text or transitions.
+    camera: {from: 1.04, to: 1.14, origin: "50% 50%"}
+    hud: {text: "05 — SOLUTION", color: accent}
+    overlays:
+      - {type: headline, text: "JADI:", top: 890, size: 44, color: accent, at: 0.5, anim: mono, plate: true}
+      - {type: headline, text: "TULIS", top: 960, size: 150, color: ink, at: "w:tulis", anim: rise, plate: true}
+      - {type: headline, text: "SPEC DULU", top: 1110, size: 150, color: accent, at: "w:dulu", anim: slam, plate: true}
+    fx:
+      - {type: glow, x: "50%", y: "46%", color: accent}
+      - {type: flash_in, dur: 0.45}
+      - {type: bloom, x: "50%", y: "47%", at: 0.2}
+    sfx:
+      - {at: 0.0, name: impact-bass-2, vol: 0.55}
+      - {at: "w:dulu", name: chime, vol: 0.45}
+
+  - id: 06_spec
+    duration: 6
+    vo: "Spec berisi requirement, alur, aturan bisnis, dan kriteria terima."
+    keyframe_prompt: >-
+      Shot 06 (how it works): Sari on the LEFT third of the frame, facing the viewer with a friendly explaining expression, one
+      open hand gesturing toward the RIGHT side of the frame, where a tall, faint, empty translucent cyan holographic panel glows
+      softly (completely empty — no content, no text). Keep the right half of the frame calm and mostly empty for graphics.
+      Medium shot.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari gestures toward the empty holographic panel and nods as she explains.
+      Camera: very slow push-in. Preserve her exact design and the studio. No text, no content on the panel, no cuts.
+    camera: {from: 1.03, to: 1.07, origin: "62% 55%"}
+    hud: {text: "06 — HOW IT WORKS", color: accent}
+    overlays:
+      - type: callouts
+        confirm_at: "vo_end-0.1"
+        title_size: 36
+        pad: 28
+        boxes:   # inside the holographic panel (x 566–1024, y 280–1280); gap at y 700–820 leaves Sari's hand clear
+          - {x: 610, y: 300, w: 390, h: 190, index: "01", title: REQUIREMENT, sub: requirement, at: "w:requirement"}
+          - {x: 610, y: 510, w: 390, h: 190, index: "02", title: FLOW, sub: alur, at: "w:alur"}
+          - {x: 610, y: 820, w: 390, h: 190, index: "03", title: RULES, sub: aturan bisnis, at: "w:aturan"}
+          - {x: 610, y: 1030, w: 390, h: 200, index: "04", title: ACCEPTANCE, title2: CRITERIA, sub: kriteria terima, at: "w:kriteria"}
+    fx: [{type: glow, x: "70%", y: "55%", color: accent}]
+    sfx:
+      - {at: 0.0, name: whoosh-short, vol: 0.4}
+      - {at: "w:requirement", name: click, vol: 0.55}
+      - {at: "w:alur", name: click, vol: 0.55}
+      - {at: "w:aturan", name: click, vol: 0.55}
+      - {at: "w:kriteria", name: click, vol: 0.55}
+      - {at: "vo_end-0.1", name: sparkle, vol: 0.35}
+
+  - id: 07_transform
+    duration: 5
+    vo_offset: 0.15
+    vo: "Lalu AI mengerjakannya langkah demi langkah, dan tiap langkah bisa kamu cek."
+    keyframe_prompt: >-
+      Shot 07 (transform): Sari watches as streams of cyan light flow from her holographic tablet into the laptop; the monitors
+      assemble a clean abstract app interface block by block (no readable text); she nods approvingly. Three-quarter view.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari nods as light streams flow into the laptop and the interface assembles.
+      Camera: slow arc to the side. Preserve her exact design and the studio. No new text or cuts.
+    camera: {from: 1.08, to: 1.14, x: [-26, 26], origin: "40% 55%"}
+    hud: {text: "07 — TRANSFORM", color: accent}
+    overlays:
+      - type: flow
+        top: 1000
+        size: 100
+        tokens:
+          - {text: SPEC, color: accent, at: 0.3}
+          - {text: AI, color: ink, at: "w:AI"}
+          - {text: APP, color: ink, at: "w:langkah"}
+      - {type: badge, top: 1140, text: "tiap langkah bisa dicek", at: "w:cek"}
+    fx: [{type: glow, x: "45%", y: "62%", color: accent}]
+    sfx:
+      - {at: 0.0, name: whoosh, vol: 0.45}
+      - {at: 0.3, name: pop, vol: 0.4}
+      - {at: "w:AI", name: pop, vol: 0.4}
+      - {at: "w:langkah", name: pop, vol: 0.4}
+      - {at: "w:cek", name: ping, vol: 0.45}
+
+  - id: 08_result
+    duration: 8
+    vo_offset: 0.1
+    vo: "Itulah Spec Driven Development. Jelas tujuannya, jelas selesainya. Coba di proyek berikutnya!"
+    keyframe_prompt: >-
+      Shot 08 (payoff): Sari faces the viewer with a warm confident smile and a thumbs-up; behind her the monitors show a clean
+      dashboard with glowing green-cyan check marks (no text); warm amber lamp glow. Medium shot, character slightly low in the
+      frame with generous empty space at the top.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari smiles and gives a thumbs-up, then a small wink. Camera: very slow push-in.
+      Preserve her exact design and the studio. No new text or cuts.
+    camera: {from: 1.04, to: 1.12, origin: "55% 45%"}
+    hud: {text: "SPEC DRIVEN DEVELOPMENT", color: accent, at: "w:Spec"}
+    overlays:
+      - {type: headline, text: "JELAS TUJUANNYA,", top: 900, size: 110, color: ink, at: "w:tujuannya", anim: slam, plate: true}
+      - {type: headline, text: "JELAS SELESAINYA.", top: 1010, size: 110, color: accent, at: "w:selesainya", anim: slam, plate: true}
+      - {type: cta, text: "Coba di proyek berikutnya", top: 1150, at: "w:Coba"}
+    fx: [{type: glow, x: "25%", y: "30%", color: warm}]
+    sfx:
+      - {at: 0.0, name: whoosh-short, vol: 0.4}
+      - {at: "w:Spec", name: sparkle, vol: 0.35}
+      - {at: "w:tujuannya", name: impact-bass-2, vol: 0.35}
+      - {at: "w:selesainya", name: chime, vol: 0.4}
+      - {at: "w:Coba", name: pop, vol: 0.45}

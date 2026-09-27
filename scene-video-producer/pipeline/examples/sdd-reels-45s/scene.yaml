@@ -1,0 +1,619 @@
+# S.C.E.N.E. example — the 45s SDD Reels, expressed as a pipeline spec.
+# Produced by: scene voice → scene keyframes → scene clips → scene build → scene render
+
+project: sdd-reels-45s
+brief:
+  topic: Spec Driven Development
+  audience: Developer dan vibe coder
+  platform: reels
+  duration: 45
+  language: id
+  message: Tulis spec sebelum AI coding
+  cta: Coba workflow berbasis spec di proyek berikutnya
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+theme:
+  bg: '#0A1428'
+  ink: '#EAF4F8'
+  accent: '#3FD8EA'
+  warm: '#FFB35C'
+  danger: '#FF5A68'
+  fonts:
+    display: Archivo Black
+    mono: JetBrains Mono
+    caption: Montserrat
+style:
+  reference_prompt: >-
+    Original developer character reference. Southeast Asian man in his late 20s, short slightly messy black hair, clean-shaven,
+    no glasses, plain black hoodie with no logo, seated at a dark wood desk in a nighttime futuristic developer studio: silver
+    laptop, two vertical monitors with abstract cyan code light, mechanical keyboard, amber desk lamp on the right, blurred
+    city window behind. Dark navy palette, cyan key light from the monitors, warm amber rim light. Cinematic photoreal, subtle
+    film grain, 35mm lens, shallow depth of field. Vertical 9:16, medium shot, face clearly visible. Leave empty space at
+    top and bottom for overlays. No readable text, captions, logos, or watermarks.
+providers:
+  image:
+    name: codex
+  voice:
+    name: edge
+    voice: id-ID-ArdiNeural
+    rate: +12%
+  video:
+    name: minimax
+    model: MiniMax-H3
+    resolution: 768P
+    prompt_expansion: disabled
+  music:
+    name: synth
+    turn_at_shot: 05_solution
+budget:
+  video_usd: 5
+captions:
+  zone: bottom
+  max_words: 4
+  keywords:
+    spec: accent
+    error: danger
+    salah: danger
+    development: accent
+audio:
+  music_volume: 0.55
+  carve: true
+shots:
+- id: 01_hook
+  vo: AI sekarang bisa nulis kode secepat kilat.
+  duration: 4
+  vo_offset: 0.4
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 01, 0–4s: side close-up of the developer typing
+    fast on the mechanical keyboard, focused expression, streams of abstract cyan code light reflecting on his face. Same
+    character face, black hoodie, studio, palette, and rendering style. Camera: 50mm close-up from the left side, hands and
+    face in frame. Mood: energetic, cool cyan light with a small amber rim. Preserve vertical 9:16 and safe overlay space
+    at top and bottom. No readable text, captions, logos, watermarks, new characters, or unrelated objects.
+  motion_prompt: >-
+    Animate the supplied Shot 01 keyframe for 4 seconds. Subject: the developer types rapidly with focused eyes. Camera: slow
+    cinematic push-in. Environment: abstract cyan code light scrolls and flickers across his face, subtle ambient particles.
+    Timing: fast typing from the first frame. Preserve the exact character appearance, clothing, room layout, composition,
+    and style. Natural, controlled motion. No new text, subtitles, logos, scene transitions, or camera cuts.
+  camera:
+    from: 1.12
+    to: 1.24
+    origin: 45% 42%
+    y:
+    - 0
+    - -12
+  hud:
+    text: 01 — HOOK
+    color: accent
+  overlays:
+  - type: headline
+    text: AI CODING
+    top: 292
+    size: 124
+    color: ink
+    at: 1.2
+    anim: slam
+  - type: headline
+    text: = CEPAT
+    top: 424
+    size: 124
+    color: accent
+    at: 1.66
+    anim: slam
+  fx:
+  - type: glow
+    x: 78%
+    y: 44%
+    color: accent
+  sfx:
+  - at: 0.05
+    name: typing
+    vol: 0.45
+  - at: 1.15
+    name: whoosh-short
+    vol: 0.5
+  - at: 1.5
+    name: typing
+    vol: 0.4
+  - at: 1.6
+    name: impact-bass-2
+    vol: 0.3
+- id: 02_setup
+  vo: Tinggal ketik prompt, ratusan baris kode langsung jadi. Tapi...
+  duration: 5
+  vo_offset: 0.3
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 02, 4–9s: over-the-shoulder view as both monitors
+    fill with cascading abstract blocks of glowing cyan code; the developer leans back in his chair with a slight satisfied
+    smile. Same character face, black hoodie, studio, palette, and rendering style. Camera: 35mm over-the-shoulder from behind-right.
+    Mood: confident, bright cyan screens, warm amber lamp. Preserve vertical 9:16 and safe overlay space. No readable text,
+    captions, logos, watermarks, new characters, or unrelated objects.
+  motion_prompt: >-
+    Animate the supplied Shot 02 keyframe for 5 seconds. Subject: the developer finishes typing, then leans back in his chair
+    with a slight satisfied smile. Camera: slow dolly to the right. Environment: blocks of cyan code cascade quickly down
+    both monitors. Timing: lean back at around 2 seconds, hold the smile at the end. Preserve the exact character appearance,
+    clothing, room layout, composition, and style. Natural motion. No new text, subtitles, logos, scene transitions, or camera
+    cuts.
+  camera:
+    from: 1.12
+    to: 1.12
+    origin: 50% 45%
+    x:
+    - 44
+    - -44
+  hud:
+    text: 02 — SETUP
+    color: accent
+  overlays:
+  - type: headline
+    text: '> ai.generate(code)'
+    top: 300
+    size: 44
+    color: accent
+    at: 0.25
+    anim: type
+    out: 3.55
+  - type: headline
+    text: TAPI...
+    top: 292
+    size: 170
+    color: warm
+    at: 3.77
+    anim: snap
+  fx:
+  - type: glow
+    x: 60%
+    y: 38%
+    color: accent
+  - type: bars
+    top: 372
+    widths:
+    - 520
+    - 380
+    - 460
+    - 300
+    - 540
+    - 410
+    - 250
+    - 480
+    at: 1.35
+    step: 0.22
+    out: 3.55
+  sfx:
+  - at: 0.0
+    name: whoosh-short
+    vol: 0.4
+  - at: 0.35
+    name: key-press
+    vol: 0.5
+  - at: 1.35
+    name: sparkle
+    vol: 0.3
+  - at: 3.72
+    name: whoosh
+    vol: 0.55
+- id: 03_problem
+  vo: AI nggak tahu apa yang sebenarnya kamu mau. Hasilnya? Error.
+  duration: 6
+  vo_offset: 0.4
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 03, 9–15s: frontal medium shot; both monitors
+    have turned into a harsh red error glow, the developer's hands have frozen above the keyboard, brow furrowed in confusion,
+    his face lit red. Same character face, black hoodie, studio, and rendering style; red light is an intentional change.
+    Camera: 35mm eye-level frontal medium shot. Mood: tense, red screen light fighting the navy darkness, amber lamp still
+    visible. Preserve vertical 9:16 and safe overlay space. No readable text, captions, logos, watermarks, new characters,
+    or unrelated objects.
+  motion_prompt: >-
+    Animate the supplied Shot 03 keyframe for 6 seconds. Subject: the developer's hands stay frozen above the keyboard, his
+    brow tightens, he leans slightly toward the screen. Camera: subtle handheld drift. Environment: red error light pulses
+    and flickers on the monitors and his face. Timing: two slow red pulses, confusion growing. Preserve the exact character
+    appearance, clothing, room layout, composition, and style. Natural motion. No new text, subtitles, logos, scene transitions,
+    or camera cuts.
+  camera:
+    from: 1.1
+    to: 1.18
+    origin: 58% 38%
+  hud:
+    text: 03 — PROBLEM
+    color: danger
+  overlays:
+  - type: headline
+    text: AI NGGAK TAHU
+    top: 292
+    size: 104
+    color: ink
+    at: 0.9
+    anim: rise
+    out: 4.5
+  - type: headline
+    text: MAUMU
+    top: 410
+    size: 104
+    color: danger
+    at: 1.8
+    anim: rise
+    out: 4.5
+  - type: headline
+    text: ERROR
+    top: 300
+    size: 210
+    color: danger
+    at: 4.6
+    anim: glitch
+  fx:
+  - type: glow
+    x: 80%
+    y: 34%
+    color: danger
+  - type: alarm
+    pulses:
+    - - 0.2
+      - 0.3
+    - - 2.4
+      - 0.3
+    - - 4.6
+      - 0.55
+    shake_at: 4.6
+  sfx:
+  - at: 0.0
+    name: glitch-1
+    vol: 0.35
+  - at: 4.55
+    name: error
+    vol: 0.5
+  - at: 4.6
+    name: glitch-2
+    vol: 0.35
+- id: 04_escalation
+  vo: Makin cepat kamu nge-prompt, makin cepat juga kamu bikin hal yang salah.
+  duration: 5
+  vo_offset: 0.3
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 04, 15–20s: wide shot of the studio overwhelmed
+    by many floating translucent red holographic panels and broken, tangled flow lines surrounding the desk; the developer
+    has both hands on his head, overwhelmed. Same character face, black hoodie, studio, and rendering style. Camera: 35mm
+    wide shot, slightly high angle, full desk and character visible. Mood: chaotic but readable, red glow dominant with navy
+    shadows. Preserve vertical 9:16 and safe overlay space. No readable text, captions, logos, watermarks, new characters,
+    or unrelated objects.
+  motion_prompt: >-
+    Animate the supplied Shot 04 keyframe for 5 seconds. Subject: the developer keeps his hands on his head and slowly shakes
+    it. Camera: slow pull-out. Environment: red holographic panels multiply and drift around the desk, broken flow lines flicker.
+    Timing: chaos builds steadily to the last frame. Preserve the exact character appearance, clothing, room layout, composition,
+    and style. Controlled motion. No new text, subtitles, logos, scene transitions, or camera cuts.
+  camera:
+    from: 1.26
+    to: 1.04
+    origin: 50% 55%
+    ease: power2.out
+  hud:
+    text: 04 — ESCALATION
+    color: danger
+  overlays:
+  - type: headline
+    text: MAKIN CEPAT
+    top: 292
+    size: 118
+    color: ink
+    at: 0.62
+    anim: snap
+  - type: headline
+    text: MAKIN SALAH
+    top: 420
+    size: 118
+    color: danger
+    at: 3.0
+    anim: glitch
+  fx:
+  - type: glow
+    x: 30%
+    y: 30%
+    color: danger
+  - type: alarm
+    pulses:
+    - - 0.1
+      - 0.25
+    - - 1.4
+      - 0.3
+    - - 2.6
+      - 0.35
+    - - 3.0
+      - 0.5
+    - - 4.0
+      - 0.4
+    shake_at: 3.0
+  - type: flash_out
+    dur: 0.22
+  sfx:
+  - at: 0.0
+    name: glitch-1
+    vol: 0.35
+  - at: 0
+    name: riser
+    vol: 0.4
+    dur: 5
+    media_start: 5
+  - at: 2.95
+    name: impact-bass-1
+    vol: 0.5
+  - at: 4.9
+    name: impact-bass-2
+    vol: 0.55
+- id: 05_solution
+  vo: 'Solusinya: sebelum coding, tulis spec dulu.'
+  duration: 5
+  vo_offset: 0.6
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 05, 20–25s: the developer looks up from the laptop
+    as a clean cyan software specification board appears in the air in front of him: four empty connected modules, simple
+    flow arrows, decision nodes and check marks. The chaotic red panels are gone. Calm reveal after the chaos. Same face,
+    black hoodie, navy studio, amber lamp, and rendering style. Camera: 35mm medium shot from slightly behind the board, facing
+    the developer. Mood: calm relief, cyan glow returns, warm amber accent. Preserve vertical 9:16 and safe overlay space.
+    No labels, lettering, captions, logos, or watermarks.
+  motion_prompt: >-
+    Animate the supplied Shot 05 keyframe for 5 seconds. Subject: the developer slowly lifts his gaze from the laptop to the
+    spec board. Camera: gentle push-in. Environment: the four cyan spec modules illuminate one by one, subtle screen reflections
+    on his face. Timing: calm reveal, last module lights near the end. Preserve all visual identities, composition, and style.
+    Natural motion. No text, labels, subtitles, logos, or transitions.
+  camera:
+    from: 1.04
+    to: 1.14
+    origin: 50% 50%
+  hud:
+    text: 05 — SOLUTION
+    color: accent
+  overlays:
+  - type: headline
+    text: 'SOLUSINYA:'
+    top: 300
+    size: 44
+    color: accent
+    at: 0.65
+    anim: mono
+  - type: headline
+    text: TULIS
+    top: 372
+    size: 150
+    color: ink
+    at: 2.6
+    anim: rise
+  - type: headline
+    text: SPEC DULU
+    top: 520
+    size: 150
+    color: accent
+    at: 2.88
+    anim: slam
+  fx:
+  - type: glow
+    x: 50%
+    y: 46%
+    color: accent
+  - type: flash_in
+    dur: 0.45
+  - type: bloom
+    x: 50%
+    y: 47%
+    at: 0.2
+  sfx:
+  - at: 2.85
+    name: chime
+    vol: 0.45
+- id: 06_spec
+  vo: >-
+    Spec itu berisi requirement, alur, aturan bisnis, dan kriteria terima. Jelas apa yang dibangun, dan kapan dianggap selesai.
+  duration: 8
+  vo_offset: 0.0
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 06, 25–33s: close-up of the holographic cyan specification
+    board with four stacked modules arranged vertically with clear gaps between them; the developer's hand reaches in and
+    touches the first module, which glows brighter while the other three stay dim. Same face (partially visible), black hoodie
+    sleeve, navy studio, amber lamp bokeh, and rendering style. Camera: 50mm close-up, board centered, empty space beside
+    each module for editor labels. Mood: focused and clear, clean cyan light. Preserve vertical 9:16. No labels, lettering,
+    captions, logos, or watermarks.
+  motion_prompt: >-
+    Animate the supplied Shot 06 keyframe for 8 seconds. Subject: the developer's hand touches the four spec modules from
+    top to bottom, one every two seconds; each module brightens when touched and stays lit. Camera: small, slow orbit to the
+    right. Environment: soft cyan particles drift around the board, amber bokeh in the background. Timing: touches at about
+    0.5s, 2.5s, 4.5s, and 6.5s. Preserve the exact hand, sleeve, board layout, composition, and style. Natural motion. No
+    text, labels, subtitles, logos, or transitions.
+  camera:
+    from: 1.03
+    to: 1.07
+    origin: 62% 55%
+  hud:
+    text: 06 — HOW IT WORKS
+    color: accent
+  captions: top-right
+  overlays:
+  - type: callouts
+    boxes:
+    - x: 420
+      y: 547
+      w: 490
+      h: 228
+      index: '01'
+      title: REQUIREMENT
+      sub: requirement
+      at: 0.78
+    - x: 420
+      y: 820
+      w: 490
+      h: 220
+      index: '02'
+      title: FLOW
+      sub: alur
+      at: 1.66
+    - x: 420
+      y: 1088
+      w: 490
+      h: 217
+      index: '03'
+      title: RULES
+      sub: aturan bisnis
+      at: 2.32
+    - x: 420
+      y: 1345
+      w: 490
+      h: 235
+      index: '04'
+      title: ACCEPTANCE
+      sub: kriteria terima
+      at: 3.54
+      title2: CRITERIA
+    confirm_at: 7.28
+  fx:
+  - type: glow
+    x: 62%
+    y: 55%
+    color: accent
+  sfx:
+  - at: 0.0
+    name: whoosh-short
+    vol: 0.4
+  - at: 0.78
+    name: click
+    vol: 0.55
+  - at: 1.66
+    name: click
+    vol: 0.55
+  - at: 2.32
+    name: click
+    vol: 0.55
+  - at: 3.54
+    name: click
+    vol: 0.55
+  - at: 7.25
+    name: sparkle
+    vol: 0.35
+- id: 07_transform
+  vo: >-
+    Lalu AI mengimplementasikan spec itu, langkah demi langkah, dan tiap langkah bisa kamu cek.
+  duration: 6
+  vo_offset: 0.2
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 07, 33–40s: streams of cyan light flow from the
+    four spec modules into the laptop, and both monitors assemble a clean abstract application interface block by block; the
+    developer watches attentively with a slight nod. Same character face, black hoodie, studio, palette, and rendering style.
+    Camera: 35mm three-quarter view from behind-left, showing the board, the laptop, and the monitors. Mood: progress and
+    momentum, bright cyan with warm amber accents. Preserve vertical 9:16 and safe overlay space. No readable text, captions,
+    logos, watermarks, new characters, or unrelated objects.
+  motion_prompt: >-
+    Animate the supplied Shot 07 keyframe for 7 seconds. Subject: the developer watches and gives a small approving nod. Camera:
+    slow arc from behind-left toward the side. Environment: cyan light streams flow from the spec modules into the laptop;
+    the abstract app interface on the monitors assembles block by block. Timing: steady build, interface completes near the
+    end. Preserve the exact character appearance, clothing, room layout, composition, and style. Natural motion. No new text,
+    subtitles, logos, scene transitions, or camera cuts.
+  camera:
+    from: 1.08
+    to: 1.14
+    origin: 40% 55%
+    x:
+    - -26
+    - 26
+  hud:
+    text: 07 — TRANSFORM
+    color: accent
+  overlays:
+  - type: flow
+    top: 300
+    size: 100
+    tokens:
+    - text: SPEC
+      color: accent
+      at: 0.3
+    - text: AI
+      color: ink
+      at: 0.5
+    - text: APP
+      color: ink
+      at: 2.2
+  - type: badge
+    top: 440
+    text: tiap langkah bisa dicek
+    at: 4.45
+  fx:
+  - type: glow
+    x: 45%
+    y: 62%
+    color: accent
+  sfx:
+  - at: 0.0
+    name: whoosh
+    vol: 0.45
+  - at: 0.3
+    name: pop
+    vol: 0.4
+  - at: 0.5
+    name: pop
+    vol: 0.4
+  - at: 2.2
+    name: pop
+    vol: 0.4
+  - at: 4.45
+    name: ping
+    vol: 0.45
+- id: 08_result
+  vo: >-
+    Itulah Spec Driven Development. Coba di proyek berikutnya: spec dulu, baru coding.
+  duration: 6
+  vo_offset: 0.0
+  keyframe_prompt: >-
+    Use the approved reference as the identity and environment anchor. Shot 08, 40–45s: the developer leans back relaxed and
+    smiling; both monitors show a clean, working abstract app dashboard with soft green-cyan check marks. Same character face,
+    black hoodie, studio, palette, and rendering style. Camera: 35mm frontal medium shot, character centered and slightly
+    low in frame, generous empty space at the top for the CTA. Mood: satisfied resolution, warm amber lamp stronger, calm
+    cyan screens. Preserve vertical 9:16. No readable text, captions, logos, watermarks, new characters, or unrelated objects.
+  motion_prompt: >-
+    Animate the supplied Shot 08 keyframe for 5 seconds. Subject: the developer leans back, relaxed, and smiles toward the
+    screen. Camera: very slow push-in. Environment: the dashboard check marks glow softly, the amber lamp flickers warmly,
+    gentle ambient particles. Timing: calm and steady, hold the final frame. Preserve the exact character appearance, clothing,
+    room layout, composition, and style. Natural motion. No new text, subtitles, logos, scene transitions, or camera cuts.
+  camera:
+    from: 1.04
+    to: 1.12
+    origin: 60% 40%
+  hud:
+    text: SPEC DRIVEN DEVELOPMENT
+    color: accent
+    at: 0.43
+  overlays:
+  - type: headline
+    text: SPEC DULU,
+    top: 300
+    size: 132
+    color: ink
+    at: 3.86
+    anim: slam
+  - type: headline
+    text: BARU CODING.
+    top: 436
+    size: 132
+    color: accent
+    at: 4.77
+    anim: slam
+  - type: cta
+    text: Coba di proyek berikutnya
+    top: 1178
+    at: 2.42
+  fx:
+  - type: glow
+    x: 25%
+    y: 30%
+    color: warm
+  sfx:
+  - at: 0.0
+    name: whoosh-short
+    vol: 0.4
+  - at: 0.45
+    name: sparkle
+    vol: 0.35
+  - at: 2.42
+    name: pop
+    vol: 0.45
+  - at: 3.85
+    name: impact-bass-2
+    vol: 0.35
+  - at: 4.77
+    name: chime
+    vol: 0.4

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s-03-ai-template">
+      <style>
+      #s-03-ai { position:absolute; inset:0; overflow:hidden; background:#0B1530; color:#EEF3FF; }
+      #s-03-ai .cam { position:absolute; inset:0; transform-origin:50% 40%; will-change:transform; }
+      #s-03-ai .drift, #s-03-ai .shake { position:absolute; inset:0; will-change:transform; }
+      #s-03-ai .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s-03-ai .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+          background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s-03-ai .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+          background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s-03-ai .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+          font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; }
+      #s-03-ai .hud .rule { display:block; width:110px; height:3px; transform-origin:0 50%; }
+      #s-03-ai .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+          line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s-03-ai .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s-03-ai .hl.hl-plate { width:auto; max-width:940px; padding:10px 22px 14px; border-radius:14px; background:rgba(6,12,26,.78);
+          box-shadow:0 10px 40px rgba(0,0,0,.35); }
+      #s-03-ai .hl.hl-plate .gl { width:auto; }
+      #s-03-ai .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#5B86FF; }
+      #s-03-ai .gl { position:relative; display:block; width:940px; }
+      #s-03-ai .gl span, #s-03-ai .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s-03-ai .gl strong { position:relative; }
+      #s-03-ai .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s-03-ai .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s-03-ai-fx0 { position:absolute; left:50%; top:35%; width:900px; height:900px; margin:-450px 0 0 -450px; border-radius:50%; background:radial-gradient(circle, #5B86FF55 0%, #5B86FF00 65%); mix-blend-mode:screen; }#s-03-ai-o0 { position:absolute; left:80px; top:930px; width:920px; display:flex; flex-wrap:wrap; gap:16px; }
+      #s-03-ai-o0 .chip { display:block; padding:14px 26px 16px; border-radius:999px; background:rgba(6,12,26,.84); border:3px solid #5B86FF;
+          font-family:'Montserrat', sans-serif; font-weight:900; font-size:38px; line-height:1.1; color:#EEF3FF;
+          white-space:nowrap; transform-origin:0 50%; box-shadow:0 8px 30px rgba(0,0,0,.35); }
+      </style>
+      <div id="s-03-ai" data-composition-id="s-03-ai" data-width="1080" data-height="1920" data-duration="8">
+        <div class="cam" id="s-03-ai-cam" data-layout-allow-overflow><div class="drift" id="s-03-ai-drift"><div class="shake" id="s-03-ai-shake"><img class="plate" src="assets/keyframes/03_ai.png" alt="" /></div></div></div><div id="s-03-ai-fx0" data-layout-ignore></div><div class="scrim-top" data-layout-ignore></div><div class="scrim-bot" data-layout-ignore></div><div class="hud" style="color:#5B86FF"><span class="rule" id="s-03-ai-rule" style="background:#5B86FF"></span><span id="s-03-ai-hudtxt">02 — SOLUSI AI</span></div><div id="s-03-ai-o0"><span class="chip" id="s-03-ai-o0-c0" style="color:#EEF3FF">PREDICTIVE DATA</span><span class="chip" id="s-03-ai-o0-c1" style="color:#5B86FF">AGENTIC AI</span><span class="chip" id="s-03-ai-o0-c2" style="color:#EEF3FF">RECOMMENDATION ENGINE</span><span class="chip" id="s-03-ai-o0-c3" style="color:#5B86FF">COMPUTER VISION</span></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s-03-ai-cam", { scale:1.04, x:-20, y:0 }, { scale:1.12, x:20, y:0, duration:8, ease:"sine.inOut" }, 0);
+          tl.fromTo("#s-03-ai-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-03-ai-fx0", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-03-ai-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.080);
+          tl.fromTo("#s-03-ai-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.200);
+          tl.fromTo("#s-03-ai-o0-c0", { opacity:0, scale:.7 }, { opacity:1, scale:1, duration:.4, ease:"back.out(2.4)" }, 1.133);
+          tl.fromTo("#s-03-ai-o0-c1", { opacity:0, scale:.7 }, { opacity:1, scale:1, duration:.4, ease:"back.out(2.4)" }, 2.937);
+          tl.fromTo("#s-03-ai-o0-c2", { opacity:0, scale:.7 }, { opacity:1, scale:1, duration:.4, ease:"back.out(2.4)" }, 4.133);
+          tl.fromTo("#s-03-ai-o0-c3", { opacity:0, scale:.7 }, { opacity:1, scale:1, duration:.4, ease:"back.out(2.4)" }, 6.143);
+          window.__timelines["s-03-ai"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,556 @@
+{
+ "voice": {
+  "01_hook": {
+   "key": "243b5105e672d273",
+   "file": "assets/voice/01_hook.wav",
+   "speech": 3.452,
+   "words": [
+    {
+     "text": "Punya",
+     "s": 0.05,
+     "e": 0.365
+    },
+    {
+     "text": "ide",
+     "s": 0.365,
+     "e": 0.854
+    },
+    {
+     "text": "tapi",
+     "s": 1.17,
+     "e": 1.452
+    },
+    {
+     "text": "bingung",
+     "s": 1.452,
+     "e": 1.811
+    },
+    {
+     "text": "mewujudkannya",
+     "s": 1.811,
+     "e": 2.496
+    },
+    {
+     "text": "dengan",
+     "s": 2.496,
+     "e": 2.789
+    },
+    {
+     "text": "AI",
+     "s": 2.789,
+     "e": 3.202
+    }
+   ]
+  },
+  "02_intro": {
+   "key": "c97a306f1450733f",
+   "file": "assets/voice/02_intro.wav",
+   "speech": 6.409,
+   "words": [
+    {
+     "text": "Kenalan",
+     "s": 0.05,
+     "e": 0.474
+    },
+    {
+     "text": "dulu",
+     "s": 0.474,
+     "e": 0.909
+    },
+    {
+     "text": "ini",
+     "s": 1.224,
+     "e": 1.496
+    },
+    {
+     "text": "GITS",
+     "s": 1.496,
+     "e": 1.789
+    },
+    {
+     "text": "Indonesia",
+     "s": 1.789,
+     "e": 2.615
+    },
+    {
+     "text": "agensi",
+     "s": 2.93,
+     "e": 3.463
+    },
+    {
+     "text": "AI",
+     "s": 3.463,
+     "e": 3.702
+    },
+    {
+     "text": "dari",
+     "s": 3.702,
+     "e": 3.909
+    },
+    {
+     "text": "Bandung",
+     "s": 3.909,
+     "e": 4.496
+    },
+    {
+     "text": "sejak",
+     "s": 4.724,
+     "e": 5.126
+    },
+    {
+     "text": "2008",
+     "s": 5.126,
+     "e": 6.159
+    }
+   ]
+  },
+  "03_ai": {
+   "key": "d2b3bfb296281b3f",
+   "file": "assets/voice/03_ai.wav",
+   "speech": 7.191,
+   "words": [
+    {
+     "text": "Kami",
+     "s": 0.05,
+     "e": 0.376
+    },
+    {
+     "text": "membangun",
+     "s": 0.376,
+     "e": 0.833
+    },
+    {
+     "text": "predictive",
+     "s": 0.833,
+     "e": 1.485
+    },
+    {
+     "text": "analytics",
+     "s": 1.485,
+     "e": 2.333
+    },
+    {
+     "text": "agentic",
+     "s": 2.637,
+     "e": 3.126
+    },
+    {
+     "text": "AI",
+     "s": 3.126,
+     "e": 3.561
+    },
+    {
+     "text": "recommendation",
+     "s": 3.833,
+     "e": 4.561
+    },
+    {
+     "text": "engine",
+     "s": 4.561,
+     "e": 5.115
+    },
+    {
+     "text": "sampai",
+     "s": 5.365,
+     "e": 5.843
+    },
+    {
+     "text": "computer",
+     "s": 5.843,
+     "e": 6.343
+    },
+    {
+     "text": "vision",
+     "s": 6.343,
+     "e": 6.941
+    }
+   ]
+  },
+  "04_services": {
+   "key": "0341a3b95707c528",
+   "file": "assets/voice/04_services.wav",
+   "speech": 4.8,
+   "words": [
+    {
+     "text": "Juga",
+     "s": 0.05,
+     "e": 0.463
+    },
+    {
+     "text": "aplikasi",
+     "s": 0.463,
+     "e": 0.952
+    },
+    {
+     "text": "mobile",
+     "s": 0.952,
+     "e": 1.387
+    },
+    {
+     "text": "dan",
+     "s": 1.387,
+     "e": 1.583
+    },
+    {
+     "text": "web",
+     "s": 1.583,
+     "e": 1.746
+    },
+    {
+     "text": "kustom",
+     "s": 1.746,
+     "e": 2.3
+    },
+    {
+     "text": "lengkap",
+     "s": 2.593,
+     "e": 2.974
+    },
+    {
+     "text": "dengan",
+     "s": 2.974,
+     "e": 3.246
+    },
+    {
+     "text": "dukungan",
+     "s": 3.246,
+     "e": 3.67
+    },
+    {
+     "text": "berkelanjutan",
+     "s": 3.67,
+     "e": 4.55
+    }
+   ]
+  },
+  "05_numbers": {
+   "key": "32f3af2473dd6f86",
+   "file": "assets/voice/05_numbers.wav",
+   "speech": 5.92,
+   "words": [
+    {
+     "text": "Lebih",
+     "s": 0.05,
+     "e": 0.485
+    },
+    {
+     "text": "dari",
+     "s": 0.485,
+     "e": 0.702
+    },
+    {
+     "text": "seratus",
+     "s": 0.702,
+     "e": 1.126
+    },
+    {
+     "text": "aplikasi",
+     "s": 1.126,
+     "e": 1.963
+    },
+    {
+     "text": "lima",
+     "s": 2.3,
+     "e": 2.583
+    },
+    {
+     "text": "belas",
+     "s": 2.583,
+     "e": 2.898
+    },
+    {
+     "text": "juta",
+     "s": 2.898,
+     "e": 3.17
+    },
+    {
+     "text": "unduhan",
+     "s": 3.17,
+     "e": 3.767
+    },
+    {
+     "text": "dan",
+     "s": 4.028,
+     "e": 4.224
+    },
+    {
+     "text": "seratus",
+     "s": 4.224,
+     "e": 4.757
+    },
+    {
+     "text": "lebih",
+     "s": 4.757,
+     "e": 5.093
+    },
+    {
+     "text": "klien",
+     "s": 5.093,
+     "e": 5.67
+    }
+   ]
+  },
+  "06_trust": {
+   "key": "cfa6ad290dd75886",
+   "file": "assets/voice/06_trust.wav",
+   "speech": 7.865,
+   "words": [
+    {
+     "text": "Dipercaya",
+     "s": 0.05,
+     "e": 0.615
+    },
+    {
+     "text": "Pertamina",
+     "s": 0.615,
+     "e": 1.311
+    },
+    {
+     "text": "Kereta",
+     "s": 1.637,
+     "e": 2.017
+    },
+    {
+     "text": "Api",
+     "s": 2.017,
+     "e": 2.322
+    },
+    {
+     "text": "Indonesia",
+     "s": 2.322,
+     "e": 3.126
+    },
+    {
+     "text": "Jasa",
+     "s": 3.441,
+     "e": 3.8
+    },
+    {
+     "text": "Raharja",
+     "s": 3.8,
+     "e": 4.43
+    },
+    {
+     "text": "sampai",
+     "s": 4.702,
+     "e": 5.093
+    },
+    {
+     "text": "Otsuka",
+     "s": 5.093,
+     "e": 5.778
+    },
+    {
+     "text": "dan",
+     "s": 6.061,
+     "e": 6.278
+    },
+    {
+     "text": "jadi",
+     "s": 6.278,
+     "e": 6.517
+    },
+    {
+     "text": "mitra",
+     "s": 6.517,
+     "e": 6.854
+    },
+    {
+     "text": "Google",
+     "s": 6.854,
+     "e": 7.202
+    },
+    {
+     "text": "Cloud",
+     "s": 7.202,
+     "e": 7.615
+    }
+   ]
+  },
+  "07_team": {
+   "key": "22b5fc64b22edea4",
+   "file": "assets/voice/07_team.wav",
+   "speech": 6.18,
+   "words": [
+    {
+     "text": "Seratus",
+     "s": 0.05,
+     "e": 0.648
+    },
+    {
+     "text": "dua",
+     "s": 0.648,
+     "e": 0.822
+    },
+    {
+     "text": "puluh",
+     "s": 0.822,
+     "e": 1.05
+    },
+    {
+     "text": "lebih",
+     "s": 1.05,
+     "e": 1.333
+    },
+    {
+     "text": "talenta",
+     "s": 1.333,
+     "e": 1.702
+    },
+    {
+     "text": "siap",
+     "s": 1.702,
+     "e": 2.017
+    },
+    {
+     "text": "membantu",
+     "s": 2.017,
+     "e": 2.637
+    },
+    {
+     "text": "dari",
+     "s": 2.974,
+     "e": 3.202
+    },
+    {
+     "text": "Bandung",
+     "s": 3.202,
+     "e": 3.778
+    },
+    {
+     "text": "Jakarta",
+     "s": 4.007,
+     "e": 4.746
+    },
+    {
+     "text": "sampai",
+     "s": 4.941,
+     "e": 5.441
+    },
+    {
+     "text": "Bali",
+     "s": 5.441,
+     "e": 5.93
+    }
+   ]
+  },
+  "08_cta": {
+   "key": "22ead2e6b0f8621c",
+   "file": "assets/voice/08_cta.wav",
+   "speech": 6.924,
+   "words": [
+    {
+     "text": "GITS",
+     "s": 0.05,
+     "e": 0.365
+    },
+    {
+     "text": "Indonesia",
+     "s": 0.365,
+     "e": 1.17
+    },
+    {
+     "text": "ubah",
+     "s": 1.485,
+     "e": 1.757
+    },
+    {
+     "text": "ide",
+     "s": 1.757,
+     "e": 2.159
+    },
+    {
+     "text": "jadi",
+     "s": 2.159,
+     "e": 2.485
+    },
+    {
+     "text": "solusi",
+     "s": 2.485,
+     "e": 2.952
+    },
+    {
+     "text": "cerdas",
+     "s": 2.952,
+     "e": 3.67
+    },
+    {
+     "text": "Yuk",
+     "s": 4.391,
+     "e": 4.739
+    },
+    {
+     "text": "jadwalkan",
+     "s": 5.087,
+     "e": 5.685
+    },
+    {
+     "text": "demo",
+     "s": 5.685,
+     "e": 6.011
+    },
+    {
+     "text": "sekarang",
+     "s": 6.011,
+     "e": 6.674
+    }
+   ]
+  }
+ },
+ "keyframes": {
+  "00_reference": {
+   "key": "f15cb5846fdfa06f",
+   "file": "assets/keyframes/00_reference.png",
+   "hash": "16c4b2948b012b85",
+   "source": "codex"
+  },
+  "04_services": {
+   "key": "289457fada69e25a",
+   "file": "assets/keyframes/04_services.png",
+   "hash": "e7a9d70a11a053cd",
+   "source": "codex"
+  },
+  "03_ai": {
+   "key": "84bf1fde524901ee",
+   "file": "assets/keyframes/03_ai.png",
+   "hash": "fcd3d3851783ad3e",
+   "source": "codex"
+  },
+  "02_intro": {
+   "key": "d3f30e273ba40ec1",
+   "file": "assets/keyframes/02_intro.png",
+   "hash": "74549bc297c86e67",
+   "source": "codex"
+  },
+  "01_hook": {
+   "key": "e0722ac147562bb6",
+   "file": "assets/keyframes/01_hook.png",
+   "hash": "57c9f748df5eeeaf",
+   "source": "codex"
+  },
+  "05_numbers": {
+   "key": "277b7cd71a1c7a5d",
+   "file": "assets/keyframes/05_numbers.png",
+   "hash": "4109b33d495d28f9",
+   "source": "codex"
+  },
+  "07_team": {
+   "key": "7acbfeed41715d55",
+   "file": "assets/keyframes/07_team.png",
+   "hash": "4f562f0d717fc0ff",
+   "source": "codex"
+  },
+  "06_trust": {
+   "key": "02f9658113772a68",
+   "file": "assets/keyframes/06_trust.png",
+   "hash": "fa51aa7717e0e5e0",
+   "source": "codex"
+  },
+  "08_cta": {
+   "key": "a48ae476c8635ef5",
+   "file": "assets/keyframes/08_cta.png",
+   "hash": "e8de8551052c5f58",
+   "source": "codex"
+  }
+ }
+}

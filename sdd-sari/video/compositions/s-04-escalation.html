@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s-04-escalation-template">
+      <style>
+      #s-04-escalation { position:absolute; inset:0; overflow:hidden; background:#0A1428; color:#EAF4F8; }
+      #s-04-escalation .cam { position:absolute; inset:0; transform-origin:50% 55%; will-change:transform; }
+      #s-04-escalation .drift, #s-04-escalation .shake { position:absolute; inset:0; will-change:transform; }
+      #s-04-escalation .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s-04-escalation .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+          background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s-04-escalation .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+          background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s-04-escalation .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+          font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; }
+      #s-04-escalation .hud .rule { display:block; width:110px; height:3px; transform-origin:0 50%; }
+      #s-04-escalation .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+          line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s-04-escalation .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s-04-escalation .hl.hl-plate { width:auto; max-width:940px; padding:10px 22px 14px; border-radius:14px; background:rgba(6,12,26,.78);
+          box-shadow:0 10px 40px rgba(0,0,0,.35); }
+      #s-04-escalation .hl.hl-plate .gl { width:auto; }
+      #s-04-escalation .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#3FD8EA; }
+      #s-04-escalation .gl { position:relative; display:block; width:940px; }
+      #s-04-escalation .gl span, #s-04-escalation .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s-04-escalation .gl strong { position:relative; }
+      #s-04-escalation .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s-04-escalation .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s-04-escalation-fx0 { position:absolute; left:30%; top:30%; width:900px; height:900px; margin:-450px 0 0 -450px; border-radius:50%; background:radial-gradient(circle, #FF5A6855 0%, #FF5A6800 65%); mix-blend-mode:screen; }#s-04-escalation-fx1-wash { position:absolute; inset:0; mix-blend-mode:multiply;
+                background:radial-gradient(ellipse at 60% 40%, rgba(255,40,60,.55) 0%, rgba(120,0,20,.35) 55%, rgba(40,0,10,.5) 100%); }
+              #s-04-escalation-fx1-glow { position:absolute; inset:0; opacity:0; mix-blend-mode:screen; background:radial-gradient(circle at 70% 30%, rgba(255,60,80,.5), rgba(255,60,80,0) 60%); }#s-04-escalation-fx2 { position:absolute; inset:0; opacity:0; background:radial-gradient(circle at 50% 45%, #ffffff 0%, #bff6ff 45%, #3FD8EA 100%); }
+      </style>
+      <div id="s-04-escalation" data-composition-id="s-04-escalation" data-width="1080" data-height="1920" data-duration="5">
+        <div class="cam" id="s-04-escalation-cam" data-layout-allow-overflow><div class="drift" id="s-04-escalation-drift"><div class="shake" id="s-04-escalation-shake"><img class="plate" src="assets/keyframes/04_escalation.png" alt="" /></div></div></div><div id="s-04-escalation-fx0" data-layout-ignore></div><div id="s-04-escalation-fx1-wash" data-layout-ignore></div><div id="s-04-escalation-fx1-glow" data-layout-ignore></div><div class="scrim-top" data-layout-ignore></div><div class="scrim-bot" data-layout-ignore></div><div class="hud" style="color:#FF5A68"><span class="rule" id="s-04-escalation-rule" style="background:#FF5A68"></span><span id="s-04-escalation-hudtxt">04 — ESCALATION</span></div><div class="hl hl-plate" id="s-04-escalation-o0" style="top:960px; font-size:104px; color:#EAF4F8;">TANPA DENAH</div><div class="hl hl-plate" id="s-04-escalation-o1" style="top:1090px; font-size:104px; color:#FF5A68;"><div class="gl" id="s-04-escalation-o1-gl"><span data-layout-allow-overlap>MAKIN SALAH</span><span data-layout-allow-overlap>MAKIN SALAH</span><strong data-layout-allow-overlap>MAKIN SALAH</strong></div></div><div id="s-04-escalation-fx2" data-layout-ignore></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s-04-escalation-cam", { scale:1.26, x:0, y:0 }, { scale:1.04, x:0, y:0, duration:5, ease:"power2.out" }, 0);
+          tl.fromTo("#s-04-escalation-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-04-escalation-fx0", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-04-escalation-fx1-wash", { opacity:0.25 }, { opacity:0.6, duration:5, ease:"none" }, 0);
+          tl.fromTo("#s-04-escalation-fx1-glow", { opacity:0 }, { opacity:0.25, duration:.16, ease:"power2.out", immediateRender:true }, 0.100);
+          tl.to("#s-04-escalation-fx1-glow", { opacity:0, duration:0.60, ease:"power2.in" }, 0.270);
+          tl.fromTo("#s-04-escalation-fx1-glow", { opacity:0 }, { opacity:0.3, duration:.16, ease:"power2.out", immediateRender:false }, 1.752);
+          tl.to("#s-04-escalation-fx1-glow", { opacity:0, duration:0.60, ease:"power2.in" }, 1.922);
+          tl.fromTo("#s-04-escalation-fx1-glow", { opacity:0 }, { opacity:0.35, duration:.16, ease:"power2.out", immediateRender:false }, 2.850);
+          tl.to("#s-04-escalation-fx1-glow", { opacity:0, duration:0.60, ease:"power2.in" }, 3.020);
+          tl.fromTo("#s-04-escalation-fx1-glow", { opacity:0 }, { opacity:0.5, duration:.16, ease:"power2.out", immediateRender:false }, 3.872);
+          tl.to("#s-04-escalation-fx1-glow", { opacity:0, duration:0.60, ease:"power2.in" }, 4.042);
+          tl.set("#s-04-escalation-shake", { x:-14, y:6 }, 3.872);
+          tl.set("#s-04-escalation-shake", { x:12, y:-8 }, 3.917);
+          tl.set("#s-04-escalation-shake", { x:-9, y:10 }, 3.962);
+          tl.set("#s-04-escalation-shake", { x:8, y:-5 }, 4.007);
+          tl.set("#s-04-escalation-shake", { x:-5, y:4 }, 4.052);
+          tl.set("#s-04-escalation-shake", { x:3, y:-2 }, 4.097);
+          tl.set("#s-04-escalation-shake", { x:0, y:0 }, 4.142);
+          tl.fromTo("#s-04-escalation-fx2", { opacity:0 }, { opacity:1, duration:0.22, ease:"power1.in" }, 4.780);
+          tl.fromTo("#s-04-escalation-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.080);
+          tl.fromTo("#s-04-escalation-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.200);
+          tl.fromTo("#s-04-escalation-o0", { opacity:0, x:-140 }, { opacity:1, x:0, duration:.42, ease:"expo.out" }, 1.415);
+          tl.fromTo("#s-04-escalation-o1", { opacity:0, scale:1.18 }, { opacity:1, scale:1, duration:.18, ease:"power4.out" }, 3.872);
+          tl.fromTo("#s-04-escalation-o1-gl span:nth-child(1)", { x:0 }, { x:-14, duration:.05, ease:"steps(1)", yoyo:true, repeat:9 }, 3.872);
+          tl.fromTo("#s-04-escalation-o1-gl span:nth-child(1)", { x:3 }, { x:-3, duration:.4, ease:"sine.inOut", yoyo:true, repeat:0, immediateRender:false }, 4.422);
+          tl.fromTo("#s-04-escalation-o1-gl span:nth-child(2)", { x:0 }, { x:14, duration:.05, ease:"steps(1)", yoyo:true, repeat:9 }, 3.872);
+          tl.fromTo("#s-04-escalation-o1-gl span:nth-child(2)", { x:-3 }, { x:3, duration:.4, ease:"sine.inOut", yoyo:true, repeat:0, immediateRender:false }, 4.422);
+          window.__timelines["s-04-escalation"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

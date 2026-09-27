@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s05-template">
+      <style>
+      #s05 { position:absolute; inset:0; overflow:hidden; background:#0A1428; color:#EAF4F8; }
+      #s05 .cam { position:absolute; inset:0; transform-origin:50% 50%; will-change:transform; }
+      #s05 .drift { position:absolute; inset:0; will-change:transform; }
+      #s05 .shake { position:absolute; inset:0; }
+      #s05 .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s05 .glow { position:absolute; left:50%; top:46%; width:900px; height:900px; margin:-450px 0 0 -450px;
+                      border-radius:50%; background:radial-gradient(circle, #3FD8EA55 0%, #3FD8EA00 65%); mix-blend-mode:screen; }
+      #s05 .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+                      background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s05 .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+                      background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s05 .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+                      font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; color:#3FD8EA; }
+      #s05 .hud .rule { display:block; width:110px; height:3px; background:#3FD8EA; transform-origin:0 50%; }
+      #s05 .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+                      line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s05 .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s05 .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#3FD8EA; }
+      #s05 .gl { position:relative; display:block; width:940px; }
+      #s05 .gl span, #s05 .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s05 .gl strong { position:relative; }
+      #s05 .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s05 .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s05 .flash { position:absolute; inset:0; background:radial-gradient(circle at 50% 45%, #ffffff 0%, #bff6ff 45%, #3FD8EA 100%); }#s05 .bloom { position:absolute; left:50%; top:47%; width:1300px; height:700px; margin:-350px 0 0 -650px; border-radius:50%; background:radial-gradient(ellipse, #3FD8EA66 0%, #3FD8EA00 70%); mix-blend-mode:screen; }
+      </style>
+      <div id="s05" data-composition-id="s05" data-width="1080" data-height="1920" data-duration="5">
+        
+      <div class="cam" id="s05-cam" data-layout-allow-overflow><div class="drift" id="s05-drift"><div class="shake" id="s05-shake">
+        <img class="plate" src="assets/keyframes/05_solution.png" alt="" />
+      </div></div></div>
+      <div class="glow" id="s05-glow" data-layout-ignore></div>
+      <div class="bloom" id="s05-bloom" data-layout-ignore></div>
+      <div class="scrim-top" data-layout-ignore></div>
+      <div class="scrim-bot" data-layout-ignore></div>
+      <div class="hud" id="s05-hud"><span class="rule" id="s05-rule"></span><span id="s05-hudtxt">05 — SOLUTION</span></div>
+      
+      <div class="flash" id="s05-flash" data-layout-ignore></div>
+    <div class="hl mono" id="s05-l0" style="top:300px; font-size:44px; color:#3FD8EA;">SOLUSINYA:</div><div class="hl" id="s05-l1" style="top:372px; font-size:150px; color:#EAF4F8;">TULIS</div><div class="hl" id="s05-l2" style="top:520px; font-size:127px; color:#3FD8EA;">SPEC DULU</div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          
+      tl.fromTo("#s05-cam", { scale:1.04, x:0, y:0 }, { scale:1.14, x:0, y:0, duration:5, ease:"sine.inOut" }, 0);
+      tl.fromTo("#s05-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+      tl.fromTo("#s05-glow", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+      tl.fromTo("#s05-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.08);
+      tl.fromTo("#s05-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.20);
+    tl.fromTo("#s05-l0", { opacity:0, x:-24 }, { opacity:1, x:0, duration:.35, ease:"power2.out" }, 0.65);tl.fromTo("#s05-l1", { opacity:0, y:70 }, { opacity:1, y:0, duration:.5, ease:"power3.out" }, 2.6);tl.fromTo("#s05-l2", { opacity:0, scale:1.32, filter:"blur(10px)" }, { opacity:1, scale:1, filter:"blur(0px)", duration:.34, ease:"power4.out" }, 2.88);tl.fromTo("#s05-flash", { opacity:1 }, { opacity:0, duration:.45, ease:"power2.out" }, 0.08);tl.fromTo("#s05-bloom", { opacity:0, scale:.7 }, { opacity:.9, scale:1, duration:1.6, ease:"power2.out" }, .2);tl.to("#s05-bloom", { opacity:.55, duration:1.2, ease:"sine.inOut", yoyo:true, repeat:1 }, 1.8);
+          window.__timelines["s05"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{"ts": "2026-09-25T15:07:31", "event": "submitted", "kind": "video", "shot": "01_hook", "take": 1, "provider": "mock", "model": "mock-kenburns", "resolution": "768P", "seconds": 4, "usd": 0.0, "task_id": "a84fa30fe868"}
+{"ts": "2026-09-25T15:07:31", "event": "done", "kind": "video", "shot": "01_hook", "take": 1, "task_id": "a84fa30fe868"}
+{"ts": "2026-09-25T15:07:31", "event": "submitted", "kind": "video", "shot": "05_solution", "take": 1, "provider": "mock", "model": "mock-kenburns", "resolution": "768P", "seconds": 5, "usd": 0.0, "task_id": "b219b4a545ad"}
+{"ts": "2026-09-25T15:07:31", "event": "done", "kind": "video", "shot": "05_solution", "take": 1, "task_id": "b219b4a545ad"}
+{"ts": "2026-09-25T15:07:32", "event": "submitted", "kind": "video", "shot": "05_solution", "take": 2, "provider": "mock", "model": "mock-kenburns", "resolution": "768P", "seconds": 5, "usd": 0.0, "task_id": "b219b4a545ad"}
+{"ts": "2026-09-25T15:07:32", "event": "done", "kind": "video", "shot": "05_solution", "take": 2, "task_id": "b219b4a545ad"}

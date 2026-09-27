@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s06-template">
+      <style>
+      #s06 { position:absolute; inset:0; overflow:hidden; background:#0A1428; color:#EAF4F8; }
+      #s06 .cam { position:absolute; inset:0; transform-origin:62% 55%; will-change:transform; }
+      #s06 .drift { position:absolute; inset:0; will-change:transform; }
+      #s06 .shake { position:absolute; inset:0; }
+      #s06 .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s06 .glow { position:absolute; left:62%; top:55%; width:900px; height:900px; margin:-450px 0 0 -450px;
+                      border-radius:50%; background:radial-gradient(circle, #3FD8EA55 0%, #3FD8EA00 65%); mix-blend-mode:screen; }
+      #s06 .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+                      background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s06 .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+                      background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s06 .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+                      font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; color:#3FD8EA; }
+      #s06 .hud .rule { display:block; width:110px; height:3px; background:#3FD8EA; transform-origin:0 50%; }
+      #s06 .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+                      line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s06 .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s06 .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#3FD8EA; }
+      #s06 .gl { position:relative; display:block; width:940px; }
+      #s06 .gl span, #s06 .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s06 .gl strong { position:relative; }
+      #s06 .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s06 .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s06 .box { position:absolute; border-radius:18px; box-shadow:0 0 0 3px #3FD8EA, 0 0 38px 8px #3FD8EA88, inset 0 0 40px #3FD8EA55; }
+      #s06 .lab { position:absolute; display:flex; flex-direction:column; justify-content:center; padding:0 40px; box-sizing:border-box; transform-origin:30% 50%; }
+      #s06 .lab .idx { font-family:'JetBrains Mono', monospace; font-weight:700; font-size:24px; letter-spacing:.14em; color:#3FD8EA; }
+      #s06 .lab .nm { font-family:'Archivo Black', sans-serif; font-size:46px; line-height:1.02; letter-spacing:-0.02em; color:#ffffff; text-shadow:0 2px 14px rgba(0,10,30,.9); }
+      #s06 .lab .sub { margin-top:8px; font-family:'JetBrains Mono', monospace; font-weight:700; font-size:24px; color:#FFB35C; text-shadow:0 2px 10px rgba(0,10,30,.9); }
+      #s06 .dim { position:absolute; border-radius:18px; background:rgba(4,10,24,.55); }
+      </style>
+      <div id="s06" data-composition-id="s06" data-width="1080" data-height="1920" data-duration="8">
+        
+      <div class="cam" id="s06-cam" data-layout-allow-overflow><div class="drift" id="s06-drift"><div class="shake" id="s06-shake">
+        <img class="plate" src="assets/keyframes/06_spec.png" alt="" />
+      </div></div></div>
+      <div class="glow" id="s06-glow" data-layout-ignore></div>
+      
+      <div class="scrim-top" data-layout-ignore></div>
+      <div class="scrim-bot" data-layout-ignore></div>
+      <div class="hud" id="s06-hud"><span class="rule" id="s06-rule"></span><span id="s06-hudtxt">06 — HOW IT WORKS</span></div>
+      <div class="cam" id="s06-cam2" data-layout-allow-overflow><div class="drift" id="s06-drift2"><div class="dim" id="s06-dim0" style="left:420px; top:547px; width:490px; height:228px;"></div><div class="box" id="s06-box0" style="left:420px; top:547px; width:490px; height:228px;"></div><div class="lab" id="s06-lab0" style="left:420px; top:547px; width:490px; height:228px;"><div class="idx">01</div><div class="nm">REQUIREMENT</div><div class="sub">requirement</div></div><div class="dim" id="s06-dim1" style="left:420px; top:820px; width:490px; height:220px;"></div><div class="box" id="s06-box1" style="left:420px; top:820px; width:490px; height:220px;"></div><div class="lab" id="s06-lab1" style="left:420px; top:820px; width:490px; height:220px;"><div class="idx">02</div><div class="nm">FLOW</div><div class="sub">alur</div></div><div class="dim" id="s06-dim2" style="left:420px; top:1088px; width:490px; height:217px;"></div><div class="box" id="s06-box2" style="left:420px; top:1088px; width:490px; height:217px;"></div><div class="lab" id="s06-lab2" style="left:420px; top:1088px; width:490px; height:217px;"><div class="idx">03</div><div class="nm">RULES</div><div class="sub">aturan bisnis</div></div><div class="dim" id="s06-dim3" style="left:420px; top:1345px; width:490px; height:235px;"></div><div class="box" id="s06-box3" style="left:420px; top:1345px; width:490px; height:235px;"></div><div class="lab" id="s06-lab3" style="left:420px; top:1345px; width:490px; height:235px;"><div class="idx">04</div><div class="nm">ACCEPTANCE<br>CRITERIA</div><div class="sub">kriteria terima</div></div></div></div>
+      
+    
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          
+      tl.fromTo("#s06-cam", { scale:1.03, x:0, y:0 }, { scale:1.07, x:0, y:0, duration:8, ease:"sine.inOut" }, 0);
+      tl.fromTo("#s06-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+      tl.fromTo("#s06-glow", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+      tl.fromTo("#s06-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.08);
+      tl.fromTo("#s06-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.20);
+    tl.fromTo("#s06-box0", { opacity:0 }, { opacity:1, duration:.12, ease:"power2.out" }, 0.73);tl.to("#s06-box0", { opacity:.45, duration:.7, ease:"power2.inOut" }, 1.03);tl.fromTo("#s06-lab0", { opacity:0, scale:.82 }, { opacity:1, scale:1, duration:.45, ease:"back.out(2.2)" }, 0.78);tl.fromTo("#s06-dim0", { opacity:0 }, { opacity:1, duration:.3, ease:"power2.out" }, 0.73);tl.to("#s06-box0", { opacity:1, duration:.15, ease:"power2.out" }, 7.28);tl.fromTo("#s06-box1", { opacity:0 }, { opacity:1, duration:.12, ease:"power2.out" }, 1.61);tl.to("#s06-box1", { opacity:.45, duration:.7, ease:"power2.inOut" }, 1.91);tl.fromTo("#s06-lab1", { opacity:0, scale:.82 }, { opacity:1, scale:1, duration:.45, ease:"back.out(2.2)" }, 1.66);tl.fromTo("#s06-dim1", { opacity:0 }, { opacity:1, duration:.3, ease:"power2.out" }, 1.61);tl.to("#s06-box1", { opacity:1, duration:.15, ease:"power2.out" }, 7.34);tl.fromTo("#s06-box2", { opacity:0 }, { opacity:1, duration:.12, ease:"power2.out" }, 2.27);tl.to("#s06-box2", { opacity:.45, duration:.7, ease:"power2.inOut" }, 2.57);tl.fromTo("#s06-lab2", { opacity:0, scale:.82 }, { opacity:1, scale:1, duration:.45, ease:"back.out(2.2)" }, 2.32);tl.fromTo("#s06-dim2", { opacity:0 }, { opacity:1, duration:.3, ease:"power2.out" }, 2.27);tl.to("#s06-box2", { opacity:1, duration:.15, ease:"power2.out" }, 7.40);tl.fromTo("#s06-box3", { opacity:0 }, { opacity:1, duration:.12, ease:"power2.out" }, 3.49);tl.to("#s06-box3", { opacity:.45, duration:.7, ease:"power2.inOut" }, 3.79);tl.fromTo("#s06-lab3", { opacity:0, scale:.82 }, { opacity:1, scale:1, duration:.45, ease:"back.out(2.2)" }, 3.54);tl.fromTo("#s06-dim3", { opacity:0 }, { opacity:1, duration:.3, ease:"power2.out" }, 3.49);tl.to("#s06-box3", { opacity:1, duration:.15, ease:"power2.out" }, 7.46);
+      tl.fromTo("#s06-cam2", { scale:1.03, x:0, y:0 }, { scale:1.07, x:0, y:0, duration:8, ease:"sine.inOut" }, 0);
+      tl.fromTo("#s06-drift2", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

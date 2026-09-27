@@ -1,0 +1,74 @@
+# scene.yaml — single source of truth for one S.C.E.N.E. video.
+# Claude (the create-video skill) writes/revises this; `scene <stage>` commands only read it.
+# Times in `at` fields: seconds from shot start, "w:<word>" (when that VO word starts), "w:<word>+0.2", "end-0.3", "vo_end".
+
+project: my-video
+brief:                       # S — Strategy
+  topic: "…"
+  audience: "…"
+  platform: reels
+  duration: 30               # target seconds (shot durations are checked against it)
+  language: id
+  message: "…"               # the ONE thing to remember
+  cta: "…"
+
+format: {width: 1080, height: 1920, fps: 30}
+
+theme:                       # named colors usable anywhere as color: accent / ink / warm / danger
+  bg: "#0A1428"
+  ink: "#EAF4F8"
+  accent: "#3FD8EA"
+  warm: "#FFB35C"
+  danger: "#FF5A68"
+  fonts: {display: "Archivo Black", mono: "JetBrains Mono", caption: "Montserrat"}
+
+style:                       # E — Establish visuals
+  reference_prompt: >-       # generated first as 00_reference; attached to every keyframe for identity continuity
+    Original character reference … Vertical 9:16 … No readable text, captions, logos, or watermarks.
+  consistency: ""            # optional line appended to every keyframe prompt
+
+providers:
+  image: {name: codex}                     # codex | manual (then: scene adopt keyframes <dir>)
+  voice: {name: edge, voice: id-ID-ArdiNeural, rate: "+12%"}
+  video: {name: minimax, model: MiniMax-H3, resolution: 768P, prompt_expansion: disabled}   # or {name: mock} to test for $0
+  music: {name: synth, turn_at_shot: shot_02}                  # synth | file (path:) | none
+
+budget: {video_usd: 5}       # hard cap for paid video generation (ledger in .scene/ledger.jsonl)
+
+captions:
+  zone: bottom               # bottom | top-right | off (overridable per shot)
+  max_words: 4
+  keywords: {spec: accent}   # word → color when spoken
+
+audio: {music_volume: 0.55, carve: true}
+
+shots:                       # C — Creative (shot sheet) + N — Narrative motion
+  - id: shot_01
+    purpose: hook
+    vo: "Kalimat pembuka yang langsung menarik perhatian."
+    # duration: 4            # optional; default = VO length rounded up (integer seconds)
+    # vo_offset: 0.3         # when the VO starts inside the shot
+    keyframe_prompt: >-
+      Use the approved reference as the identity and environment anchor. Shot 01: … Vertical 9:16, safe space for overlays.
+      No readable text, captions, logos, watermarks.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: … Camera: slow push-in. Environment: … Preserve the exact character
+      appearance, clothing, room, composition and style. No new text, subtitles, logos, scene transitions, or cuts.
+    camera: {from: 1.08, to: 1.18, origin: "50% 45%"}   # used when the shot is still a keyframe
+    hud: {text: "01 — HOOK", color: accent}
+    overlays:
+      - {type: headline, text: "JUDUL BESAR", top: 292, size: 120, color: ink, at: "w:perhatian", anim: slam}
+    fx:
+      - {type: glow, x: "70%", y: "40%", color: accent}
+    sfx:
+      - {at: "w:perhatian", name: whoosh-short, vol: 0.5}
+
+  - id: shot_02
+    purpose: payoff
+    vo: "Penutup dengan ajakan yang jelas."
+    keyframe_prompt: >-
+      Use the approved reference as the identity and environment anchor. Shot 02: … No readable text.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: … Camera: … Preserve identity. No new text or cuts.
+    overlays:
+      - {type: cta, text: "Coba sekarang", top: 1178, at: "w:ajakan"}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s-08-cta-template">
+      <style>
+      #s-08-cta { position:absolute; inset:0; overflow:hidden; background:#0B1530; color:#EEF3FF; }
+      #s-08-cta .cam { position:absolute; inset:0; transform-origin:50% 60%; will-change:transform; }
+      #s-08-cta .drift, #s-08-cta .shake { position:absolute; inset:0; will-change:transform; }
+      #s-08-cta .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s-08-cta .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+          background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s-08-cta .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+          background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s-08-cta .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+          font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; }
+      #s-08-cta .hud .rule { display:block; width:110px; height:3px; transform-origin:0 50%; }
+      #s-08-cta .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+          line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s-08-cta .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s-08-cta .hl.hl-plate { width:auto; max-width:940px; padding:10px 22px 14px; border-radius:14px; background:rgba(6,12,26,.78);
+          box-shadow:0 10px 40px rgba(0,0,0,.35); }
+      #s-08-cta .hl.hl-plate .gl { width:auto; }
+      #s-08-cta .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#5B86FF; }
+      #s-08-cta .gl { position:relative; display:block; width:940px; }
+      #s-08-cta .gl span, #s-08-cta .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s-08-cta .gl strong { position:relative; }
+      #s-08-cta .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s-08-cta .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s-08-cta-fx0 { position:absolute; left:50%; top:25%; width:900px; height:900px; margin:-450px 0 0 -450px; border-radius:50%; background:radial-gradient(circle, #5B86FF55 0%, #5B86FF00 65%); mix-blend-mode:screen; }#s-08-cta-o0 { position:absolute; left:calc(50% - 160.0px); top:240px; width:320px; background:rgba(6,12,26,.80); border-radius:24px; padding:28px 36px; box-sizing:content-box; transform-origin:50% 50%; }#s-08-cta-o0 img { display:block; width:100%; height:auto; }#s-08-cta-o3 { position:absolute; left:50%; top:1160px; transform-origin:50% 50%; display:flex; align-items:center; gap:18px;
+                padding:26px 44px; border-radius:999px; background:#5B86FF; color:#0B1530; font-family:'Montserrat', sans-serif;
+                font-weight:900; font-size:42px; white-space:nowrap; box-shadow:0 12px 50px rgba(63,216,234,.45); }
+              #s-08-cta-o3 svg { width:44px; height:44px; display:block; }
+      </style>
+      <div id="s-08-cta" data-composition-id="s-08-cta" data-width="1080" data-height="1920" data-duration="8">
+        <div class="cam" id="s-08-cta-cam" data-layout-allow-overflow><div class="drift" id="s-08-cta-drift"><div class="shake" id="s-08-cta-shake"><img class="plate" src="assets/keyframes/08_cta.png" alt="" /></div></div></div><div id="s-08-cta-fx0" data-layout-ignore></div><div class="scrim-top" data-layout-ignore></div><div class="scrim-bot" data-layout-ignore></div><div id="s-08-cta-o0"><img src="assets/images/logo.svg" alt="" /></div><div class="hl hl-plate" id="s-08-cta-o1" style="top:900px; font-size:88px; color:#EEF3FF;">UBAH IDE JADI</div><div class="hl hl-plate" id="s-08-cta-o2" style="top:1020px; font-size:88px; color:#5B86FF;">SOLUSI CERDAS</div><div id="s-08-cta-o3"><span>Jadwalkan demo · gits.id</span><svg viewBox="0 0 44 44"><path d="M6 22 H36 M24 10 L37 22 L24 34" fill="none" stroke="#0B1530" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s-08-cta-cam", { scale:1.04, x:0, y:0 }, { scale:1.1, x:0, y:0, duration:8, ease:"sine.inOut" }, 0);
+          tl.fromTo("#s-08-cta-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-08-cta-fx0", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:4.000, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+          tl.fromTo("#s-08-cta-o0", { opacity:0, scale:.6 }, { opacity:1, scale:1, duration:.55, ease:"back.out(2)" }, 0.200);
+          tl.fromTo("#s-08-cta-o1", { opacity:0, scale:1.32, filter:"blur(10px)" }, { opacity:1, scale:1, filter:"blur(0px)", duration:.34, ease:"power4.out" }, 1.785);
+          tl.fromTo("#s-08-cta-o2", { opacity:0, scale:1.32, filter:"blur(10px)" }, { opacity:1, scale:1, filter:"blur(0px)", duration:.34, ease:"power4.out" }, 2.785);
+          tl.fromTo("#s-08-cta-o3", { opacity:0, xPercent:-50, y:40, scale:.9 }, { opacity:1, xPercent:-50, y:0, scale:1, duration:.5, ease:"back.out(2)" }, 5.387);
+          tl.to("#s-08-cta-o3", { scale:1.05, duration:.5, ease:"sine.inOut", yoyo:true, repeat:3 }, 5.987);
+          window.__timelines["s-08-cta"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

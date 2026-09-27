@@ -1,0 +1,265 @@
+# Company profile GITS Indonesia (GITS.ID) — Reels 53 dtk, dipandu persona Sari.
+# Semua klaim diambil dari gits.id (beranda + /about), dicek 2026-09-25:
+#   "Agensi AI — Mengubah Ide Menjadi Solusi Cerdas Bersama AI"; © GITS Indonesia 2008–2026; kantor pusat Bandung, cabang Jakarta & Bali;
+#   Predictive Data · Agentic AI · Recommendation Engine · Computer Vision; aplikasi mobile & web kustom, dukungan berkelanjutan;
+#   /about: "Over 100 great applications developed", "More than 15,000,000 applications downloaded", "> 100 Happy Clients",
+#   "> 120 Developers/Expertise", "Google Partner in Google Cloud Platform"; testimoni: Pertamina, Kereta Api Indonesia, Jasa Raharja, Otsuka.
+persona: ../personas/sari
+project: gits-profile
+brief:
+  topic: Company profile GITS Indonesia
+  audience: Calon klien (perusahaan & instansi) yang ingin menerapkan AI
+  platform: reels
+  duration: 53          # 8 fakta inti butuh ~47 dtk ucapan; 45 dtk tidak muat tanpa membuang fakta
+  language: id
+  message: GITS Indonesia mengubah ide menjadi solusi cerdas bersama AI
+  cta: Jadwalkan demo di gits.id
+
+format: {width: 1080, height: 1920, fps: 30}
+
+theme:
+  bg: "#0B1530"
+  ink: "#EEF3FF"
+  accent: "#5B86FF"      # biru brand #265AF5, dicerahkan agar terbaca di latar gelap
+  warm: "#FFB35C"
+  danger: "#FF5A68"
+
+style:
+  reference_prompt: >-
+    Anime key-visual establishing frame: the persona stands in a modern, airy tech studio at blue hour — large windows with a
+    soft city skyline, clean desks with monitors showing abstract glowing charts, indoor plants, cobalt-blue (#265AF5) accent
+    lighting strips and soft warm lamps. Palette: deep navy, cobalt blue, white, soft warm accents. Vertical 9:16, medium-full
+    shot, face clearly visible, empty space at top and bottom for overlays. No readable text, captions, logos, or watermarks.
+  consistency: >-
+    Same anime key-visual rendering style and the same modern cobalt-accented tech studio as the approved scene reference.
+    Vertical 9:16 with empty space at the bottom third for overlays. No readable text, letters, captions, logos, or watermarks.
+
+providers:
+  image: {name: codex}
+  voice: {rate: "+15%"}
+  video: {name: minimax, model: MiniMax-H3, resolution: 768P, prompt_expansion: disabled}
+  music: {name: synth, turn_at_shot: 02_intro}
+
+budget: {video_usd: 5}
+
+captions:
+  zone: bottom
+  max_words: 4
+  keywords: {gits: accent, ai: accent, cerdas: accent}
+
+audio: {music_volume: 0.5, carve: true}
+
+shots:
+  - id: 01_hook
+    duration: 4
+    vo: "Punya ide, tapi bingung mewujudkannya dengan AI?"
+    keyframe_prompt: >-
+      Shot 01 (hook): Sari sits on the edge of a desk, chin resting on one hand, curious thinking expression; a small glowing
+      cobalt-blue holographic spark of an idea floats above her other open palm. Medium shot, face in the upper half.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari tilts her head thoughtfully as the idea spark pulses above her palm.
+      Camera: slow push-in. Preserve her exact design and the studio. No new text, subtitles, logos, or cuts.
+    camera: {from: 1.08, to: 1.18, origin: "50% 40%"}
+    hud: {text: "GITS.ID — COMPANY PROFILE", color: accent}
+    overlays:
+      - {type: headline, text: "PUNYA IDE?", top: 960, size: 130, color: ink, at: "w:ide", anim: slam, plate: true}
+      - {type: headline, text: "WUJUDKAN DENGAN AI", top: 1110, size: 84, color: accent, at: "w:AI", anim: rise, plate: true}
+    fx: [{type: glow, x: "60%", y: "45%", color: accent}]
+    sfx:
+      - {at: "w:ide", name: pop, vol: 0.45}
+      - {at: "w:AI", name: whoosh-short, vol: 0.45}
+
+  - id: 02_intro
+    duration: 7
+    vo: "Kenalan dulu, ini GITS Indonesia: agensi AI dari Bandung, sejak 2008."
+    keyframe_prompt: >-
+      Shot 02 (intro): Sari faces the viewer and waves hello with a bright friendly smile, standing in the studio. Medium shot,
+      her head and shoulders in the upper half, the lower third of the frame calm and uncluttered.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari waves hello and smiles warmly. Camera: gentle push-in. Preserve her exact
+      design and the studio. No new text, subtitles, logos, or cuts.
+    camera: {from: 1.06, to: 1.14, origin: "50% 40%"}
+    hud: {text: "01 — KENALAN", color: accent}
+    overlays:
+      - {type: image, src: brand/logo.svg, top: 880, w: 420, at: "w:GITS", anim: pop, plate: true}
+      - type: chips
+        top: 1170
+        size: 34
+        items:
+          - {text: "AGENSI AI", at: "w:agensi", color: accent}
+          - {text: "BANDUNG", at: "w:Bandung"}
+          - {text: "SEJAK 2008", at: "w:sejak"}
+    fx:
+      - {type: glow, x: "50%", y: "55%", color: accent}
+      - {type: flash_in, dur: 0.35}
+    sfx:
+      - {at: "w:GITS", name: impact-bass-2, vol: 0.45}
+      - {at: "w:agensi", name: pop, vol: 0.4}
+      - {at: "w:Bandung", name: pop, vol: 0.4}
+      - {at: "w:sejak", name: pop, vol: 0.4}
+
+  - id: 03_ai
+    duration: 8
+    vo: "Kami membangun predictive analytics, agentic AI, recommendation engine, sampai computer vision."
+    keyframe_prompt: >-
+      Shot 03 (AI solutions): Sari stands confidently among four floating cobalt-blue holographic panels at head height: a rising
+      line chart, a network of connected nodes, a grid of recommendation cards with stars, and a stylized scanning eye shape
+      (all abstract, no text). Medium-wide shot, lower third of the frame calm.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari gestures to each floating panel in turn as they glow. Camera: slow orbit.
+      Preserve her exact design and the studio. No new text or cuts.
+    camera: {from: 1.04, to: 1.12, x: [-20, 20], origin: "50% 40%"}
+    hud: {text: "02 — SOLUSI AI", color: accent}
+    overlays:
+      - type: chips
+        top: 930
+        size: 38
+        items:
+          - {text: "PREDICTIVE DATA", at: "w:predictive"}
+          - {text: "AGENTIC AI", at: "w:agentic", color: accent}
+          - {text: "RECOMMENDATION ENGINE", at: "w:recommendation"}
+          - {text: "COMPUTER VISION", at: "w:computer", color: accent}
+    fx: [{type: glow, x: "50%", y: "35%", color: accent}]
+    sfx:
+      - {at: "w:predictive", name: click, vol: 0.5}
+      - {at: "w:agentic", name: click, vol: 0.5}
+      - {at: "w:recommendation", name: click, vol: 0.5}
+      - {at: "w:computer", name: click, vol: 0.5}
+
+  - id: 04_services
+    duration: 5
+    vo: "Juga aplikasi mobile dan web kustom, lengkap dengan dukungan berkelanjutan."
+    keyframe_prompt: >-
+      Shot 04 (services): Sari at a desk holding up a smartphone in one hand while a laptop beside her shows an abstract app
+      interface; behind her a translucent cobalt holographic architecture diagram of connected blocks (no text). Medium shot.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari turns the phone toward the viewer and smiles; the holographic blocks connect.
+      Camera: slow dolly left. Preserve her exact design and the studio. No new text or cuts.
+    camera: {from: 1.10, to: 1.10, x: [36, -36], origin: "50% 45%"}
+    hud: {text: "03 — LAYANAN", color: accent}
+    overlays:
+      - type: chips
+        top: 960
+        size: 38
+        items:
+          - {text: "APLIKASI MOBILE", at: "w:mobile"}
+          - {text: "WEB KUSTOM", at: "w:web"}
+          - {text: "DUKUNGAN BERKELANJUTAN", at: "w:dukungan", color: accent}
+    fx: [{type: glow, x: "40%", y: "45%", color: accent}]
+    sfx:
+      - {at: 0.0, name: whoosh-short, vol: 0.4}
+      - {at: "w:mobile", name: pop, vol: 0.4}
+      - {at: "w:web", name: pop, vol: 0.4}
+      - {at: "w:dukungan", name: pop, vol: 0.4}
+
+  - id: 05_numbers
+    duration: 6
+    vo_offset: 0.15
+    vo: "Lebih dari seratus aplikasi, lima belas juta unduhan, dan seratus lebih klien."
+    keyframe_prompt: >-
+      Shot 05 (track record): Sari points upward, excited, toward large floating cobalt-blue holographic bar charts and rising
+      graph lines glowing above her (abstract, no numbers or text). Medium shot, lower third of the frame calm.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari points up and grins as the holographic bars grow. Camera: slow tilt up.
+      Preserve her exact design and the studio. No text or numbers, no cuts.
+    camera: {from: 1.06, to: 1.14, origin: "50% 35%"}
+    hud: {text: "04 — REKAM JEJAK", color: accent}
+    overlays:
+      - type: stats
+        top: 880
+        columns: 2
+        size: 92
+        items:
+          - {value: 100, suffix: "+", label: "aplikasi", at: "w:seratus"}
+          - {value: 15, suffix: " JT+", label: "unduhan", at: "w:lima"}
+          - {value: 100, suffix: "+", label: "klien", at: "w:klien-0.5"}
+    fx: [{type: glow, x: "50%", y: "30%", color: accent}]
+    sfx:
+      - {at: "w:seratus", name: sparkle, vol: 0.35}
+      - {at: "w:lima", name: sparkle, vol: 0.35}
+      - {at: "w:klien-0.5", name: sparkle, vol: 0.35}
+
+  - id: 06_trust
+    duration: 8
+    vo_offset: 0.15
+    vo: "Dipercaya Pertamina, Kereta Api Indonesia, Jasa Raharja, sampai Otsuka, dan jadi mitra Google Cloud."
+    keyframe_prompt: >-
+      Shot 06 (trust): Sari stands proudly holding up her translucent tablet, which projects a glowing cobalt-blue shield with a
+      check mark; soft confident smile. Medium shot, lower third of the frame calm. No logos, no text.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari lifts the tablet as the shield glows brighter. Camera: gentle push-in.
+      Preserve her exact design and the studio. No new text or logos, no cuts.
+    camera: {from: 1.04, to: 1.12, origin: "50% 40%"}
+    hud: {text: "05 — DIPERCAYA", color: accent}
+    overlays:
+      - type: chips
+        top: 900
+        size: 36
+        items:
+          - {text: "PERTAMINA", at: "w:Pertamina"}
+          - {text: "KERETA API INDONESIA", at: "w:Kereta"}
+          - {text: "JASA RAHARJA", at: "w:Jasa"}
+          - {text: "OTSUKA", at: "w:Otsuka"}
+      - {type: badge, top: 1180, text: "Google Cloud Partner", at: "w:Google"}
+    fx: [{type: glow, x: "50%", y: "40%", color: accent}]
+    sfx:
+      - {at: "w:Pertamina", name: click, vol: 0.5}
+      - {at: "w:Kereta", name: click, vol: 0.5}
+      - {at: "w:Jasa", name: click, vol: 0.5}
+      - {at: "w:Otsuka", name: click, vol: 0.5}
+      - {at: "w:Google", name: ping, vol: 0.45}
+
+  - id: 07_team
+    duration: 7
+    vo: "Seratus dua puluh lebih talenta siap membantu, dari Bandung, Jakarta, sampai Bali."
+    keyframe_prompt: >-
+      Shot 07 (team & offices): Sari stands beside a large floating holographic stylized map of the Indonesian archipelago in
+      cobalt blue with three glowing location pins on Java and Bali (abstract map, no text); she gestures toward it warmly.
+      Medium-wide shot, lower third of the frame calm.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari gestures to the map as the three pins light up one by one. Camera: slow
+      push-in. Preserve her exact design and the studio. No new text or cuts.
+    camera: {from: 1.04, to: 1.12, origin: "55% 40%"}
+    hud: {text: "06 — TIM KAMI", color: accent}
+    overlays:
+      - type: stats
+        top: 880
+        columns: 1
+        size: 96
+        items:
+          - {value: 120, suffix: "+", label: "talenta", at: "w:Seratus"}
+      - type: chips
+        top: 1150
+        size: 36
+        items:
+          - {text: "BANDUNG", at: "w:Bandung"}
+          - {text: "JAKARTA", at: "w:Jakarta"}
+          - {text: "BALI", at: "w:Bali"}
+    fx: [{type: glow, x: "55%", y: "35%", color: accent}]
+    sfx:
+      - {at: "w:Seratus", name: sparkle, vol: 0.35}
+      - {at: "w:Bandung", name: pop, vol: 0.4}
+      - {at: "w:Jakarta", name: pop, vol: 0.4}
+      - {at: "w:Bali", name: pop, vol: 0.4}
+
+  - id: 08_cta
+    duration: 8
+    vo: "GITS Indonesia: ubah ide jadi solusi cerdas. Yuk, jadwalkan demo sekarang!"
+    keyframe_prompt: >-
+      Shot 08 (call to action): Sari smiles warmly at the viewer and makes an inviting open-hand gesture toward the camera.
+      She stands in the LOWER half of the frame; the top 40% of the frame is calm studio background with soft cobalt light,
+      left empty for graphics. Medium shot.
+    motion_prompt: >-
+      Animate the supplied keyframe. Subject: Sari extends an inviting hand and smiles. Camera: very slow push-in. Preserve her
+      exact design and the studio. No new text or cuts.
+    camera: {from: 1.04, to: 1.10, origin: "50% 60%"}
+    overlays:
+      - {type: image, src: brand/logo.svg, top: 240, w: 320, at: 0.2, anim: pop, plate: true}
+      - {type: headline, text: "UBAH IDE JADI", top: 900, size: 96, color: ink, at: "w:ubah", anim: slam, plate: true}
+      - {type: headline, text: "SOLUSI CERDAS", top: 1020, size: 96, color: accent, at: "w:solusi", anim: slam, plate: true}
+      - {type: cta, text: "Jadwalkan demo · gits.id", top: 1160, at: "w:jadwalkan"}
+    fx: [{type: glow, x: "50%", y: "25%", color: accent}]
+    sfx:
+      - {at: 0.2, name: impact-bass-2, vol: 0.4}
+      - {at: "w:solusi", name: chime, vol: 0.4}
+      - {at: "w:jadwalkan", name: pop, vol: 0.45}

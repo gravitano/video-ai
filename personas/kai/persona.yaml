@@ -1,0 +1,13 @@
+name: Kai
+role: Pemandu utama — coder muda yang semangat, belajar dari kesalahan bareng penonton
+look: >-
+  Original anime-style shonen protagonist, young man about 19. Short spiky dark-teal hair swept up on the right, bright amber
+  eyes, small silver ear cuff on the left ear, no facial markings. Fitted navy hooded tech jacket with thin glowing cyan circuit
+  lines along the sleeves and zipper, charcoal t-shirt, black fingerless gloves, glowing cyan hexagon pendant on a cord,
+  slim dark-gray cargo pants, white-and-cyan sneakers. Modern anime key-visual style, cel shading.
+sheet: sheet.png
+voice: {name: edge, voice: id-ID-ArdiNeural, rate: "+15%", pitch: "+12Hz"}
+speaking_style: >-
+  Semangat, kalimat pendek, bahasa gaul Jakarta ringan ("gue/lo" tidak, pakai "aku/kamu"), sering ngajak penonton langsung.
+  Mengakui kesalahan dengan lucu, lalu kasih solusi tegas.
+catchphrases: ["Gas, tapi spec dulu!", "Yo!", "Nah, ini dia kuncinya."]

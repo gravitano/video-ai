@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s04-template">
+      <style>
+      #s04 { position:absolute; inset:0; overflow:hidden; background:#0A1428; color:#EAF4F8; }
+      #s04 .cam { position:absolute; inset:0; transform-origin:50% 55%; will-change:transform; }
+      #s04 .drift { position:absolute; inset:0; will-change:transform; }
+      #s04 .shake { position:absolute; inset:0; }
+      #s04 .plate { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+      #s04 .glow { position:absolute; left:30%; top:30%; width:900px; height:900px; margin:-450px 0 0 -450px;
+                      border-radius:50%; background:radial-gradient(circle, #FF5A6855 0%, #FF5A6800 65%); mix-blend-mode:screen; }
+      #s04 .scrim-top { position:absolute; left:0; top:0; width:100%; height:860px;
+                      background:linear-gradient(180deg, rgba(6,12,26,.90) 0%, rgba(6,12,26,.62) 42%, rgba(6,12,26,0) 100%); }
+      #s04 .scrim-bot { position:absolute; left:0; bottom:0; width:100%; height:820px;
+                      background:linear-gradient(0deg, rgba(6,12,26,.88) 0%, rgba(6,12,26,.45) 45%, rgba(6,12,26,0) 100%); }
+      #s04 .hud { position:absolute; left:80px; top:228px; display:flex; align-items:center; gap:18px;
+                      font-family:'JetBrains Mono', monospace; font-weight:700; font-size:26px; letter-spacing:.14em; color:#FF5A68; }
+      #s04 .hud .rule { display:block; width:110px; height:3px; background:#FF5A68; transform-origin:0 50%; }
+      #s04 .hl { position:absolute; left:80px; width:940px; font-family:'Archivo Black', sans-serif; text-transform:uppercase;
+                      line-height:1; letter-spacing:-0.03em; white-space:nowrap; transform-origin:0 50%; }
+      #s04 .hl.mono { font-family:'JetBrains Mono', monospace; font-weight:700; text-transform:none; letter-spacing:0; }
+      #s04 .hl .caret { display:inline-block; width:.55em; height:1em; margin-left:.08em; vertical-align:-0.12em; background:#3FD8EA; }
+      #s04 .gl { position:relative; display:block; width:940px; }
+      #s04 .gl span, #s04 .gl strong { position:absolute; left:0; top:0; font-weight:400; }
+      #s04 .gl strong { position:relative; }
+      #s04 .gl span:nth-child(1) { color:#ff2d55; mix-blend-mode:screen; }
+      #s04 .gl span:nth-child(2) { color:#22e1ff; mix-blend-mode:screen; }
+    #s04 .redwash { position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%, rgba(255,40,60,.55) 0%, rgba(120,0,20,.35) 55%, rgba(40,0,10,.5) 100%); mix-blend-mode:multiply; }
+      #s04 .redglow { position:absolute; inset:0; background:radial-gradient(circle at 70% 30%, rgba(255,60,80,.5), rgba(255,60,80,0) 60%); mix-blend-mode:screen; }#s04 .flash { position:absolute; inset:0; background:radial-gradient(circle at 50% 45%, #ffffff 0%, #bff6ff 45%, #3FD8EA 100%); }
+      </style>
+      <div id="s04" data-composition-id="s04" data-width="1080" data-height="1920" data-duration="5">
+        
+      <div class="cam" id="s04-cam" data-layout-allow-overflow><div class="drift" id="s04-drift"><div class="shake" id="s04-shake">
+        <img class="plate" src="assets/keyframes/04_escalation.png" alt="" />
+      </div></div></div>
+      <div class="glow" id="s04-glow" data-layout-ignore></div>
+      <div class="redwash" id="s04-wash" data-layout-ignore></div><div class="redglow" id="s04-rg" data-layout-ignore></div>
+      <div class="scrim-top" data-layout-ignore></div>
+      <div class="scrim-bot" data-layout-ignore></div>
+      <div class="hud" id="s04-hud"><span class="rule" id="s04-rule"></span><span id="s04-hudtxt">04 — ESCALATION</span></div>
+      
+      <div class="flash" id="s04-flash" data-layout-ignore></div>
+    <div class="hl" id="s04-l0" style="top:292px; font-size:104px; color:#EAF4F8;">MAKIN CEPAT</div><div class="hl" id="s04-l1" style="top:420px; font-size:104px; color:#FF5A68;"><div class="gl" id="s04-l1-gl"><span data-layout-allow-overlap>MAKIN SALAH</span><span data-layout-allow-overlap>MAKIN SALAH</span><strong data-layout-allow-overlap>MAKIN SALAH</strong></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          
+      tl.fromTo("#s04-cam", { scale:1.26, x:0, y:0 }, { scale:1.04, x:0, y:0, duration:5, ease:"power2.out" }, 0);
+      tl.fromTo("#s04-drift", { scale:1.02, x:-7, y:5 }, { scale:1.02, x:7, y:-5, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+      tl.fromTo("#s04-glow", { opacity:.55, scale:.9 }, { opacity:.95, scale:1.08, duration:2.500, ease:"sine.inOut", yoyo:true, repeat:1 }, 0);
+      tl.fromTo("#s04-rule", { scaleX:0 }, { scaleX:1, duration:.45, ease:"expo.out" }, 0.08);
+      tl.fromTo("#s04-hudtxt", { opacity:0, x:-16 }, { opacity:1, x:0, duration:.4, ease:"power3.out" }, 0.20);
+    tl.fromTo("#s04-l0", { opacity:0, x:-140 }, { opacity:1, x:0, duration:.42, ease:"expo.out" }, 0.62);
+      tl.fromTo("#s04-l1", { opacity:0, scale:1.18 }, { opacity:1, scale:1, duration:.18, ease:"power4.out" }, 3.0);
+      tl.fromTo("#s04-l1-gl span:nth-child(1)", { x:0 }, { x:-14, duration:.05, ease:"steps(1)", yoyo:true, repeat:9 }, 3.0);
+      tl.fromTo("#s04-l1-gl span:nth-child(2)", { x:0 }, { x:14, duration:.05, ease:"steps(1)", yoyo:true, repeat:9 }, 3.0);
+      tl.fromTo("#s04-l1-gl span:nth-child(1)", { x:-3 }, { x:3, duration:.4, ease:"sine.inOut", yoyo:true, repeat:2, immediateRender:false }, 3.55);
+      tl.fromTo("#s04-l1-gl span:nth-child(2)", { x:3 }, { x:-3, duration:.4, ease:"sine.inOut", yoyo:true, repeat:2, immediateRender:false }, 3.55);tl.fromTo("#s04-wash", { opacity:.25 }, { opacity:.6, duration:5, ease:"none" }, 0);tl.fromTo("#s04-rg", { opacity:0 }, { opacity:0.25, duration:.16, ease:"power2.out", immediateRender:true }, 0.1);tl.to("#s04-rg", { opacity:0, duration:0.60, ease:"power2.in" }, 0.27);tl.fromTo("#s04-rg", { opacity:0 }, { opacity:0.3, duration:.16, ease:"power2.out", immediateRender:false }, 1.4);tl.to("#s04-rg", { opacity:0, duration:0.60, ease:"power2.in" }, 1.57);tl.fromTo("#s04-rg", { opacity:0 }, { opacity:0.35, duration:.16, ease:"power2.out", immediateRender:false }, 2.6);tl.to("#s04-rg", { opacity:0, duration:0.20, ease:"power2.in" }, 2.77);tl.fromTo("#s04-rg", { opacity:0 }, { opacity:0.5, duration:.16, ease:"power2.out", immediateRender:false }, 3.0);tl.to("#s04-rg", { opacity:0, duration:0.60, ease:"power2.in" }, 3.17);tl.fromTo("#s04-rg", { opacity:0 }, { opacity:0.4, duration:.16, ease:"power2.out", immediateRender:false }, 4.0);tl.to("#s04-rg", { opacity:0, duration:0.60, ease:"power2.in" }, 4.17);tl.set("#s04-shake", { x:-14, y:6 }, 3.000);tl.set("#s04-shake", { x:12, y:-8 }, 3.045);tl.set("#s04-shake", { x:-9, y:10 }, 3.090);tl.set("#s04-shake", { x:8, y:-5 }, 3.135);tl.set("#s04-shake", { x:-5, y:4 }, 3.180);tl.set("#s04-shake", { x:3, y:-2 }, 3.225);tl.set("#s04-shake", { x:0, y:0 }, 3.270);tl.fromTo("#s04-flash", { opacity:0 }, { opacity:1, duration:.22, ease:"power1.in" }, 4.78);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

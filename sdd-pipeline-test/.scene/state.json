@@ -1,0 +1,594 @@
+{
+ "keyframes": {
+  "00_reference": {
+   "key": "fdc97c3c21c690cb",
+   "file": "assets/keyframes/00_reference.png",
+   "hash": "53a18930dea5fed5",
+   "source": "adopted"
+  },
+  "01_hook": {
+   "key": "83c09284e0fa33fa",
+   "file": "assets/keyframes/01_hook.png",
+   "hash": "3fb87e411667d889",
+   "source": "adopted"
+  },
+  "02_setup": {
+   "key": "c8452d1cc84c7c22",
+   "file": "assets/keyframes/02_setup.png",
+   "hash": "2c085e8de70f14a1",
+   "source": "adopted"
+  },
+  "03_problem": {
+   "key": "e4217e3c6a9ff5c9",
+   "file": "assets/keyframes/03_problem.png",
+   "hash": "c55333a189c80f5d",
+   "source": "adopted"
+  },
+  "04_escalation": {
+   "key": "59d3224ebab3f4fd",
+   "file": "assets/keyframes/04_escalation.png",
+   "hash": "c38cb5a14f857216",
+   "source": "adopted"
+  },
+  "05_solution": {
+   "key": "2c846a823bb171ab",
+   "file": "assets/keyframes/05_solution.png",
+   "hash": "080d8aca743c1780",
+   "source": "adopted"
+  },
+  "06_spec": {
+   "key": "49325e6cf6d651e6",
+   "file": "assets/keyframes/06_spec.png",
+   "hash": "96857e3a76b2ebde",
+   "source": "adopted"
+  },
+  "07_transform": {
+   "key": "059593745f89cc76",
+   "file": "assets/keyframes/07_transform.png",
+   "hash": "78038efa57af6e7a",
+   "source": "adopted"
+  },
+  "08_result": {
+   "key": "017015e4210d53f4",
+   "file": "assets/keyframes/08_result.png",
+   "hash": "0a93d89c2b2fd5ac",
+   "source": "adopted"
+  }
+ },
+ "voice": {
+  "01_hook": {
+   "key": "716f732a4b122cf4",
+   "file": "assets/voice/01_hook.wav",
+   "speech": 2.287,
+   "words": [
+    {
+     "text": "AI",
+     "s": 0.05,
+     "e": 0.284
+    },
+    {
+     "text": "sekarang",
+     "s": 0.284,
+     "e": 0.619
+    },
+    {
+     "text": "bisa",
+     "s": 0.619,
+     "e": 0.798
+    },
+    {
+     "text": "nulis",
+     "s": 0.798,
+     "e": 1.01
+    },
+    {
+     "text": "kode",
+     "s": 1.01,
+     "e": 1.255
+    },
+    {
+     "text": "secepat",
+     "s": 1.255,
+     "e": 1.601
+    },
+    {
+     "text": "kilat",
+     "s": 1.601,
+     "e": 2.037
+    }
+   ]
+  },
+  "02_setup": {
+   "key": "71e0d620c59bc0b0",
+   "file": "assets/voice/02_setup.wav",
+   "speech": 4.382,
+   "words": [
+    {
+     "text": "Tinggal",
+     "s": 0.05,
+     "e": 0.362
+    },
+    {
+     "text": "ketik",
+     "s": 0.362,
+     "e": 0.563
+    },
+    {
+     "text": "prompt",
+     "s": 0.563,
+     "e": 0.932
+    },
+    {
+     "text": "ratusan",
+     "s": 1.144,
+     "e": 1.534
+    },
+    {
+     "text": "baris",
+     "s": 1.534,
+     "e": 1.735
+    },
+    {
+     "text": "kode",
+     "s": 1.735,
+     "e": 1.947
+    },
+    {
+     "text": "langsung",
+     "s": 1.947,
+     "e": 2.271
+    },
+    {
+     "text": "jadi",
+     "s": 2.271,
+     "e": 2.729
+    },
+    {
+     "text": "Tapi",
+     "s": 3.474,
+     "e": 4.132
+    }
+   ]
+  },
+  "03_problem": {
+   "key": "a6ef33954a6e966f",
+   "file": "assets/voice/03_problem.wav",
+   "speech": 5.106,
+   "words": [
+    {
+     "text": "AI",
+     "s": 0.05,
+     "e": 0.262
+    },
+    {
+     "text": "nggak",
+     "s": 0.262,
+     "e": 0.407
+    },
+    {
+     "text": "tahu",
+     "s": 0.407,
+     "e": 0.664
+    },
+    {
+     "text": "apa",
+     "s": 0.664,
+     "e": 0.842
+    },
+    {
+     "text": "yang",
+     "s": 0.842,
+     "e": 0.943
+    },
+    {
+     "text": "sebenarnya",
+     "s": 0.943,
+     "e": 1.4
+    },
+    {
+     "text": "kamu",
+     "s": 1.4,
+     "e": 1.612
+    },
+    {
+     "text": "mau",
+     "s": 1.612,
+     "e": 1.958
+    },
+    {
+     "text": "Hasilnya",
+     "s": 2.702,
+     "e": 3.461
+    },
+    {
+     "text": "Error",
+     "s": 4.209,
+     "e": 4.856
+    }
+   ]
+  },
+  "04_escalation": {
+   "key": "a92d920f7a812308",
+   "file": "assets/voice/04_escalation.wav",
+   "speech": 3.436,
+   "words": [
+    {
+     "text": "Makin",
+     "s": 0.05,
+     "e": 0.329
+    },
+    {
+     "text": "cepat",
+     "s": 0.329,
+     "e": 0.541
+    },
+    {
+     "text": "kamu",
+     "s": 0.541,
+     "e": 0.686
+    },
+    {
+     "text": "nge-prompt",
+     "s": 0.686,
+     "e": 1.188
+    },
+    {
+     "text": "makin",
+     "s": 1.423,
+     "e": 1.646
+    },
+    {
+     "text": "cepat",
+     "s": 1.646,
+     "e": 1.869
+    },
+    {
+     "text": "juga",
+     "s": 1.869,
+     "e": 2.081
+    },
+    {
+     "text": "kamu",
+     "s": 2.081,
+     "e": 2.249
+    },
+    {
+     "text": "bikin",
+     "s": 2.249,
+     "e": 2.472
+    },
+    {
+     "text": "hal",
+     "s": 2.472,
+     "e": 2.606
+    },
+    {
+     "text": "yang",
+     "s": 2.606,
+     "e": 2.717
+    },
+    {
+     "text": "salah",
+     "s": 2.717,
+     "e": 3.186
+    }
+   ]
+  },
+  "05_solution": {
+   "key": "1b32b383fe99c5ea",
+   "file": "assets/voice/05_solution.wav",
+   "speech": 3.146,
+   "words": [
+    {
+     "text": "Solusinya",
+     "s": 0.05,
+     "e": 0.798
+    },
+    {
+     "text": "sebelum",
+     "s": 1.032,
+     "e": 1.367
+    },
+    {
+     "text": "coding",
+     "s": 1.367,
+     "e": 1.825
+    },
+    {
+     "text": "tulis",
+     "s": 2.048,
+     "e": 2.282
+    },
+    {
+     "text": "spec",
+     "s": 2.282,
+     "e": 2.483
+    },
+    {
+     "text": "dulu",
+     "s": 2.483,
+     "e": 2.896
+    }
+   ]
+  },
+  "06_spec": {
+   "key": "fe960de7065a32f8",
+   "file": "assets/voice/06_spec.wav",
+   "speech": 8.088,
+   "words": [
+    {
+     "text": "Spec",
+     "s": 0.05,
+     "e": 0.273
+    },
+    {
+     "text": "itu",
+     "s": 0.273,
+     "e": 0.496
+    },
+    {
+     "text": "berisi",
+     "s": 0.496,
+     "e": 0.775
+    },
+    {
+     "text": "requirement",
+     "s": 0.775,
+     "e": 1.423
+    },
+    {
+     "text": "alur",
+     "s": 1.657,
+     "e": 2.104
+    },
+    {
+     "text": "aturan",
+     "s": 2.316,
+     "e": 2.628
+    },
+    {
+     "text": "bisnis",
+     "s": 2.628,
+     "e": 3.13
+    },
+    {
+     "text": "dan",
+     "s": 3.309,
+     "e": 3.543
+    },
+    {
+     "text": "kriteria",
+     "s": 3.543,
+     "e": 3.889
+    },
+    {
+     "text": "terima",
+     "s": 3.889,
+     "e": 4.358
+    },
+    {
+     "text": "Jelas",
+     "s": 5.103,
+     "e": 5.404
+    },
+    {
+     "text": "apa",
+     "s": 5.404,
+     "e": 5.583
+    },
+    {
+     "text": "yang",
+     "s": 5.583,
+     "e": 5.706
+    },
+    {
+     "text": "dibangun",
+     "s": 5.706,
+     "e": 6.264
+    },
+    {
+     "text": "dan",
+     "s": 6.521,
+     "e": 6.721
+    },
+    {
+     "text": "kapan",
+     "s": 6.721,
+     "e": 6.978
+    },
+    {
+     "text": "dianggap",
+     "s": 6.978,
+     "e": 7.279
+    },
+    {
+     "text": "selesai",
+     "s": 7.279,
+     "e": 7.838
+    }
+   ]
+  },
+  "07_transform": {
+   "key": "5644758bb3e08b65",
+   "file": "assets/voice/07_transform.wav",
+   "speech": 4.798,
+   "words": [
+    {
+     "text": "Lalu",
+     "s": 0.05,
+     "e": 0.284
+    },
+    {
+     "text": "AI",
+     "s": 0.284,
+     "e": 0.452
+    },
+    {
+     "text": "mengimplementasikan",
+     "s": 0.452,
+     "e": 1.177
+    },
+    {
+     "text": "spec",
+     "s": 1.177,
+     "e": 1.378
+    },
+    {
+     "text": "itu",
+     "s": 1.378,
+     "e": 1.791
+    },
+    {
+     "text": "langkah",
+     "s": 2.048,
+     "e": 2.327
+    },
+    {
+     "text": "demi",
+     "s": 2.327,
+     "e": 2.483
+    },
+    {
+     "text": "langkah",
+     "s": 2.483,
+     "e": 2.985
+    },
+    {
+     "text": "dan",
+     "s": 3.197,
+     "e": 3.398
+    },
+    {
+     "text": "tiap",
+     "s": 3.398,
+     "e": 3.577
+    },
+    {
+     "text": "langkah",
+     "s": 3.577,
+     "e": 3.856
+    },
+    {
+     "text": "bisa",
+     "s": 3.856,
+     "e": 4.068
+    },
+    {
+     "text": "kamu",
+     "s": 4.068,
+     "e": 4.269
+    },
+    {
+     "text": "cek",
+     "s": 4.269,
+     "e": 4.548
+    }
+   ]
+  },
+  "08_result": {
+   "key": "6ab596140485c702",
+   "file": "assets/voice/08_result.wav",
+   "speech": 5.73,
+   "words": [
+    {
+     "text": "Itulah",
+     "s": 0.05,
+     "e": 0.429
+    },
+    {
+     "text": "Spec",
+     "s": 0.429,
+     "e": 0.664
+    },
+    {
+     "text": "Driven",
+     "s": 0.664,
+     "e": 1.01
+    },
+    {
+     "text": "Development",
+     "s": 1.01,
+     "e": 1.679
+    },
+    {
+     "text": "Coba",
+     "s": 2.422,
+     "e": 2.667
+    },
+    {
+     "text": "di",
+     "s": 2.667,
+     "e": 2.746
+    },
+    {
+     "text": "proyek",
+     "s": 2.746,
+     "e": 3.002
+    },
+    {
+     "text": "berikutnya",
+     "s": 3.002,
+     "e": 3.627
+    },
+    {
+     "text": "spec",
+     "s": 3.862,
+     "e": 4.129
+    },
+    {
+     "text": "dulu",
+     "s": 4.129,
+     "e": 4.565
+    },
+    {
+     "text": "baru",
+     "s": 4.766,
+     "e": 5.011
+    },
+    {
+     "text": "coding",
+     "s": 5.011,
+     "e": 5.48
+    }
+   ]
+  }
+ },
+ "clips": {
+  "01_hook": {
+   "key": "6f287925883e51fe",
+   "takes": [
+    {
+     "n": 1,
+     "status": "done",
+     "task_id": "a84fa30fe868",
+     "usd": 0.0,
+     "seconds": 4,
+     "file": "assets/clips/01_hook/take-1.mp4"
+    }
+   ],
+   "selected": 1
+  },
+  "05_solution": {
+   "key": "8927b1d0c40cd0d9",
+   "takes": [
+    {
+     "n": 1,
+     "status": "done",
+     "task_id": "b219b4a545ad",
+     "usd": 0.0,
+     "seconds": 5,
+     "file": "assets/clips/05_solution/take-1.mp4"
+    },
+    {
+     "n": 2,
+     "status": "done",
+     "task_id": "b219b4a545ad",
+     "usd": 0.0,
+     "seconds": 5,
+     "file": "assets/clips/05_solution/take-2.mp4"
+    }
+   ],
+   "selected": 1
+  }
+ }
+}
