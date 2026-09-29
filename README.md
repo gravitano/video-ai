@@ -4,7 +4,7 @@ Pipeline produksi film dan video AI pendek berbasis framework **S.C.E.N.E.** (li
 
 Baru pertama kali? Mulai dari [`docs/GETTING-STARTED.md`](docs/GETTING-STARTED.md).
 
-## Film pipeline (jalur utama)
+## Film pipeline
 
 Alur kerja profesional untuk short movie, iklan naratif, atau konten berkarakter:
 
@@ -36,24 +36,13 @@ python3 $S/film.py roughcut films/<slug>           # rakit rough cut dari 06-edi
 
 Panduan lengkap: [`docs/WORKFLOW-FILM.md`](docs/WORKFLOW-FILM.md). Contoh proyek: `films/dua-gelas-kopi/`.
 
-## `scene` CLI (explainer/Reels otomatis)
+## Arsip
 
-Jalur sekunder untuk video explainer atau promo berbasis voice-over (Reels/Shorts/TikTok) yang dirender otomatis dari satu `scene.yaml`: TTS → keyframe → klip MiniMax → rakit dengan HyperFrames (overlay teks, caption) → MP4. Tidak mendukung dialog antar-karakter. Proyek di `videos/<proyek>/`.
-
-```bash
-cd scene-video-producer/pipeline && uv sync
-alias scene="$PWD/.venv/bin/scene" && cd ../..
-scene init videos/promo-x && cd videos/promo-x
-scene voice && scene keyframes && scene review && scene estimate
-scene clips --yes                             # berbayar, dibatasi budget.video_usd
-scene build && scene check && scene render    # → out/<project>.mp4
-```
-
-Dokumentasi: [`scene-video-producer/pipeline/README.md`](scene-video-producer/pipeline/README.md). Test: `cd scene-video-producer/pipeline && uv run --group dev pytest -q`.
+`archived/` berisi pipeline lama `scene` (CLI otomatis untuk explainer/Reels berbasis voice-over, klip MiniMax, dirakit HyperFrames) beserta proyek-proyeknya. Tidak dikembangkan lagi, tapi masih bisa dijalankan; lihat [`archived/README.md`](archived/README.md).
 
 ## Persona
 
-`personas/` berisi karakter siap pakai (Sari, Bito, Kai): `persona.yaml` (look, suara, gaya bicara) + `sheet.png` + contoh suara. Dipakai sebagai acuan bible film, atau di `scene.yaml` (`persona: ../../personas/<nama>`). Gunakan hanya karakter dan suara original atau yang Anda punya izinnya.
+`personas/` berisi karakter siap pakai (Sari, Bito, Kai): `persona.yaml` (look, suara, gaya bicara) + `sheet.png` + contoh suara. Dipakai sebagai acuan bible film (skill `film-ide` menawarkannya). Gunakan hanya karakter dan suara original atau yang Anda punya izinnya.
 
 ## Struktur
 
@@ -63,7 +52,6 @@ Dokumentasi: [`scene-video-producer/pipeline/README.md`](scene-video-producer/pi
 .claude/agents/                subagent film-continuity-reviewer
 docs/                          getting started, workflow film, framework S.C.E.N.E. (PDF)
 films/<slug>/                  proyek film
-videos/<proyek>/               proyek scene (scene.yaml, assets/, video/, out/)
 personas/                      karakter & suara yang bisa dipakai ulang
-scene-video-producer/          plugin Claude Code (skill create-video) + CLI scene (pipeline/)
+archived/                      pipeline lama scene + proyeknya (tidak dikembangkan)
 ```

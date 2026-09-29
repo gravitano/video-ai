@@ -2,11 +2,11 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Repo ini berisi dua pipeline produksi video AI pendek berbasis framework S.C.E.N.E. (`docs/Framework_SCENE_Produksi_Video_AI.pdf`: *AI generates the shots, editor creates the video*), plus proyek-proyek hasilnya. **Film pipeline adalah jalur utama**; `scene` CLI jalur sekunder untuk explainer/Reels berbasis VO. Dokumen dan prompt ditulis dalam bahasa Indonesia; isi prompt gambar/video (LOCK, prompt keyframe/motion) dalam bahasa Inggris.
+Repo ini berisi pipeline produksi film/video AI pendek berbasis framework S.C.E.N.E. (`docs/Framework_SCENE_Produksi_Video_AI.pdf`: *AI generates the shots, editor creates the video*), plus proyek-proyek hasilnya. Jalur yang dipakai adalah film pipeline; pipeline lama `scene` diarsipkan di `archived/`. Dokumen dan prompt ditulis dalam bahasa Indonesia; isi prompt gambar/video (LOCK, prompt keyframe/motion) dalam bahasa Inggris.
 
-## Dua pipeline
+## Pipeline
 
-### 1. Film pipeline (jalur utama) — `.claude/skills/film-*` + `films/<slug>/`
+### 1. Film pipeline — `.claude/skills/film-*` + `films/<slug>/`
 
 Claude menulis dokumen pra-produksi dan prompt, menyiapkan paket upload, lalu membantu review take dan rough cut. User yang memutuskan isi kreatif, generate di platform (Google Flow, Higgsfield, dll.), dan memilih take. Alur dan gate: `docs/WORKFLOW-FILM.md`. Orchestrator: skill `film-studio` → (`film-import` untuk naskah milik user | `film-ide` → `film-naskah`) → `film-shotlist` → `film-keyframe` → `film-motion` → `film-edit` (output `00-brief.md` … `06-edit.md`).
 
@@ -35,29 +35,18 @@ python3 $S/film.py roughcut films/<slug> [nama] [--res 720|1080] [--fps 24]
 
 Script film hanya memakai stdlib Python + `ffmpeg`/`ffprobe`; tidak ada test otomatis. Uji perubahan pada salinan proyek di scratchpad (mis. salin `films/dua-gelas-kopi`), bukan pada proyek asli.
 
-### 2. `scene` CLI (explainer/Reels otomatis) — `scene-video-producer/`
+### 2. Arsip: `scene` CLI — `archived/`
 
-Untuk video berbasis voice-over + overlay teks; tidak mendukung dialog antar-karakter (handoff ke Flow sengaja menambahkan "no dialogue").
-
-Plugin Claude Code (`.claude-plugin/plugin.json`, skill `create-video`) + CLI Python di `scene-video-producer/pipeline/`. Satu `scene.yaml` adalah sumber kebenaran; Claude menulis/merevisi `scene.yaml`, CLI yang mengeksekusi: `voice` (edge-tts + timing kata) → `keyframes` (codex/manual) → `clips` (MiniMax H3, berbayar) → `review` → `build` (generate proyek HyperFrames di `video/`) → `check` → `render`. Proyek video ada di `videos/<proyek>/` (satu folder = satu `scene.yaml`); proyek baru dibuat dengan `scene init videos/<nama>` dari root repo.
-
-- Aset di-cache berdasarkan hash isi; state di `<proyek>/.scene/` (`state.json`, `ledger.jsonl`, `timeline.json`). Menjalankan ulang perintah yang sama melanjutkan task yang tertunda, bukan submit ulang.
-- **Biaya:** `clips` butuh `--yes` dan dibatasi `budget.video_usd` (kumulatif dari ledger). Jangan jalankan `clips --yes`/`run --yes` tanpa persetujuan user; pakai `scene estimate` dulu, atau provider `mock` untuk uji.
-- `video/` hasil `scene build` jangan diedit manual — ubah `scene.yaml`, lalu build ulang.
-- `scene handoff` menghasilkan folder `handoff*/` (PNG + prompt `.txt`) untuk generate klip manual di Flow; hasilnya dikembalikan lewat `scene adopt clips DIR`.
-- Persona (`personas/<nama>/persona.yaml` + `sheet.png`) dirujuk dari `scene.yaml` via `persona: ../../personas/<nama>` (path relatif ke folder proyek); bisa juga dipakai ulang di bible film.
-- API key MiniMax dibaca dari `~/.minimax_key` atau `MINIMAX_API_KEY`.
+`archived/scene-video-producer/` (plugin skill `create-video` + CLI Python `pipeline/`) dan proyeknya di `archived/videos/`. Tidak dikembangkan lagi; jangan menambah fitur atau merujuknya dari dokumentasi utama. Kalau diminta menjalankannya:
+- `scene.yaml` adalah sumber kebenaran; `video/` hasil `scene build` jangan diedit manual.
+- **Biaya:** `clips --yes`/`run --yes` memanggil MiniMax berbayar; jangan dijalankan tanpa persetujuan user (`scene estimate` dulu, atau provider `mock`).
+- Persona dirujuk sebagai `persona: ../../../personas/<nama>` (relatif ke folder proyek).
 
 ```bash
-cd scene-video-producer/pipeline && uv sync
-uv run --group dev pytest -q                                     # semua test
-uv run --group dev pytest -q tests/test_pipeline.py::test_minimax_pricing   # satu test
-cd videos/<proyek> && uv run --project ../../scene-video-producer/pipeline scene status
+cd archived/scene-video-producer/pipeline && uv sync && uv run --group dev pytest -q
+uv run --group dev pytest -q tests/test_pipeline.py::test_minimax_pricing      # satu test
+cd archived/videos/<proyek> && uv run --project ../../scene-video-producer/pipeline scene status
 ```
-
-Spesifikasi `scene.yaml`: `scene-video-producer/pipeline/scene/templates/scene.yaml` (template berkomentar) dan `README.md` pipeline. Perintah CLI: `init status estimate adopt handoff clips voices search add select review build check render run`.
-
-Folder `videos/<proyek>/video/` adalah proyek HyperFrames dengan `CLAUDE.md`-nya sendiri; kerja di sana pakai skill `/hyperframes*`.
 
 ## Git
 
