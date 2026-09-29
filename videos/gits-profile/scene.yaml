@@ -4,7 +4,7 @@
 #   Predictive Data · Agentic AI · Recommendation Engine · Computer Vision; aplikasi mobile & web kustom, dukungan berkelanjutan;
 #   /about: "Over 100 great applications developed", "More than 15,000,000 applications downloaded", "> 100 Happy Clients",
 #   "> 120 Developers/Expertise", "Google Partner in Google Cloud Platform"; testimoni: Pertamina, Kereta Api Indonesia, Jasa Raharja, Otsuka.
-persona: ../personas/sari
+persona: ../../personas/sari
 project: gits-profile
 brief:
   topic: Company profile GITS Indonesia

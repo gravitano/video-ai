@@ -6,5 +6,5 @@ __pycache__/
 .DS_Store
 
 # Rendered outputs (bisa di-render ulang dari source)
-*/out/*.mp4
-sdd-reels-45s/SDD_Reels_45s.mp4
+**/out/*.mp4
+videos/sdd-reels-45s/SDD_Reels_45s.mp4
