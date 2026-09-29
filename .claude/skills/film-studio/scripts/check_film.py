@@ -8,7 +8,9 @@ import re
 import sys
 from pathlib import Path
 
-MODES = {"Frames", "Ingredients", "Text", "Extend"}
+from filmlib import (MODES, audio_native, generator_of, generator_profile, header_field, norm, norm_words,
+                     parse_bible, parse_edit, parse_sections, parse_shotlist, parse_takes, read, spoken_lines)
+
 WPS_WARN = 2.2  # kata per detik, bahasa Indonesia
 WPS_ERROR = 2.7
 
@@ -17,54 +19,6 @@ findings = []
 
 def report(level, where, msg):
     findings.append((level, where, msg))
-
-
-def norm(text):
-    return re.sub(r"\s+", " ", text).strip().rstrip(".").strip()
-
-
-def read(path):
-    return path.read_text(encoding="utf-8") if path.exists() else None
-
-
-def parse_bible(text):
-    fields = dict(re.findall(r"^- (Rasio|Durasi target|Batas klip|Mode narasi|Bahasa dialog):\s*(.+?)\s*$", text, re.M))
-    locks = {}
-    for key, body in re.findall(r"<!--\s*LOCK:([^>]+?)\s*-->\s*```text\s*\n(.*?)\n\s*```", text, re.S):
-        locks[key.strip()] = norm(body)
-    return fields, locks
-
-
-def parse_shotlist(text):
-    shots = []
-    for line in text.splitlines():
-        if not re.match(r"^\|\s*S\d+\s*\|", line):
-            continue
-        cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cells) != 9:
-            report("ERROR", cells[0], f"baris shot list punya {len(cells)} kolom, harus 9")
-            continue
-        sid, scene, dur, cam, action, chars, locs, audio, mode = cells
-        try:
-            dur = float(dur.replace(",", "."))
-        except ValueError:
-            report("ERROR", sid, f"durasi bukan angka: {dur!r}")
-            dur = 0.0
-        split = lambda s: [x.strip() for x in s.split(",") if x.strip() and x.strip() != "-"]
-        shots.append({"id": sid, "dur": dur, "chars": split(chars), "locs": split(locs),
-                      "audio": audio, "mode": mode})
-    return shots
-
-
-def parse_sections(text):
-    """Map Sxx -> list of prompt blocks for '## Sxx' headings."""
-    sections = {}
-    parts = re.split(r"^## (S\d+)\b[^\n]*\n", text, flags=re.M)
-    for i in range(1, len(parts), 2):
-        sid, body = parts[i], parts[i + 1]
-        body = re.split(r"^## ", body, maxsplit=1, flags=re.M)[0]
-        sections[sid] = re.findall(r"```prompt\s*\n(.*?)\n\s*```", body, re.S)
-    return sections
 
 
 def quoted_words(text):
@@ -111,10 +65,26 @@ def main(root):
     for f in ("Rasio", "Durasi target", "Batas klip", "Mode narasi"):
         if f not in fields:
             report("WARN", "bible", f"field '{f}' tidak ada di bagian Format")
+    gen = generator_of(fields)
+    prof = generator_profile(gen)
+    if prof.stem != gen:
+        report("INFO", "bible", f"generator '{gen}' belum punya profil — pakai references/generators/generic.md")
+    native = audio_native(fields)
     target = float(fields.get("Durasi target", "0").split()[0] or 0)
     limit = float(fields.get("Batas klip", "8").split()[0])
     narr_sep = fields.get("Mode narasi", "in-video").lower().startswith("terpisah")
     ratio = fields.get("Rasio", "")
+    if not native and not narr_sep:
+        report("ERROR", "bible", "Audio native: tidak, jadi Mode narasi harus 'terpisah'")
+
+    naskah_txt = read(root / "02-naskah.md")
+    user_script = (header_field(naskah_txt, "Sumber") or "").lower() == "user"
+    naskah_norm = norm_words(naskah_txt) if naskah_txt else None
+    if user_script and "## Catatan AI" in naskah_txt:
+        open_notes = [l for l in naskah_txt.split("## Catatan AI", 1)[1].splitlines()
+                      if re.match(r"^\|\s*\d+\s*\|", l) and l.rstrip().rstrip("|").rsplit("|", 1)[-1].strip() in ("", "-")]
+        if open_notes:
+            report("WARN", "naskah", f"{len(open_notes)} usulan di 'Catatan AI' belum diputuskan user")
     char_names = {k.split(":", 1)[1] for k in locks if k.startswith("CHAR:")}
     loc_names = {k.split(":", 1)[1] for k in locks if k.startswith("LOC:")}
 
@@ -122,7 +92,7 @@ def main(root):
     if sl_txt is None:
         report("INFO", "shotlist", "03-shotlist.md belum ada — cek berhenti di bible")
         return
-    shots = parse_shotlist(sl_txt)
+    shots = parse_shotlist(sl_txt, report)
     if not shots:
         report("ERROR", "shotlist", "tidak ada baris shot (| Sxx | ...)")
         return
@@ -178,6 +148,8 @@ def main(root):
     mo_txt = read(root / "05-motion.md")
     if mo_txt is not None:
         mo = parse_sections(mo_txt)
+        from filmlib import split_sections
+        mo_sections = split_sections(mo_txt)
         for s in shots:
             sid = s["id"]
             prompts = mo.get(sid)
@@ -193,6 +165,17 @@ def main(root):
                 report("WARN", sid, "motion: tidak ada 'No subtitles'")
             if narr_sep and "narrator" in low and "no voice-over" not in low:
                 report("ERROR", sid, "mode narasi 'terpisah' tapi prompt berisi narrator")
+            if not native:
+                if re.search(r"\bsays\b[^\"“]*[\"“]", p) or ("narrator" in low and "no voice-over" not in low):
+                    report("ERROR", sid, "Audio native: tidak, tapi prompt berisi dialog/narasi — pindahkan ke 'Dialog terpisah:'")
+                elif "no dialogue" not in low:
+                    report("WARN", sid, "motion: klip bisu tanpa 'no dialogue'")
+            if naskah_norm is not None:
+                body = mo_sections[sid][1] if sid in mo_sections else p
+                for line in spoken_lines(body):
+                    if norm_words(line) not in naskah_norm:
+                        report("ERROR" if user_script else "WARN", sid,
+                               f"kalimat \"{line[:40]}…\" tidak ada di naskah" + (" (naskah milik user)" if user_script else ""))
             np = norm(p)
             for c in s["chars"]:
                 voice = lock_for(locks, "VOICE", c)
@@ -204,6 +187,27 @@ def main(root):
         for sid in mo:
             if sid not in by_id:
                 report("WARN", sid, "ada di 05-motion tapi tidak ada di shot list")
+
+    edit_txt = read(root / "06-edit.md")
+    if edit_txt is not None:
+        edit, layers, errs = parse_edit(edit_txt)
+        for where, msg in errs:
+            report("ERROR", where, f"06-edit: {msg}")
+        if not edit and not errs:
+            report("WARN", "edit", "06-edit.md tidak punya baris di tabel 'Urutan edit'")
+        for e in edit:
+            if e["shot"] not in by_id:
+                report("ERROR", e["shot"], "06-edit: shot tidak ada di shot list")
+            elif not (root / "assets" / "clips" / f"{e['shot']}.mp4").exists():
+                report("WARN", e["shot"], "06-edit: klip terpilih assets/clips/%s.mp4 belum ada" % e["shot"])
+        for layer in layers:
+            if not (root / layer["file"]).exists():
+                report("WARN", "edit", f"lapisan audio {layer['file']} belum ada")
+        takes = parse_takes(edit_txt)
+        credits = sum(float(t["Kredit"].replace(",", ".")) for t in takes
+                      if re.fullmatch(r"\d+([.,]\d+)?", t["Kredit"]))
+        if takes:
+            report("INFO", "edit", f"{len(takes)} take tercatat · kredit {credits:g}")
 
     assets = root / "assets"
     kfs = {p.stem for p in (assets / "keyframes").glob("S*.*")} if assets.exists() else set()

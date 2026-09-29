@@ -1,11 +1,11 @@
 ---
 name: film-keyframe
-description: Tahap 4 pipeline film AI — menulis prompt gambar untuk Google Flow (04-keyframes.md) berisi ingredients (character sheet, lokasi) dan satu keyframe/frame awal per shot, dengan LOCK bible disalin verbatim agar karakter konsisten. Juga bisa me-review gambar keyframe yang sudah di-generate. Pakai saat user minta "prompt gambar per scene", "bikin keyframe", "image prompt", "cek keyframe", atau lanjutan setelah film-shotlist.
+description: Tahap 4 pipeline film AI — menulis prompt gambar untuk generator (Flow, Higgsfield, dll.) (04-keyframes.md) berisi ingredients (character sheet, lokasi) dan satu keyframe/frame awal per shot, dengan LOCK bible disalin verbatim agar karakter konsisten. Juga bisa me-review gambar keyframe yang sudah di-generate. Pakai saat user minta "prompt gambar per scene", "bikin keyframe", "image prompt", "cek keyframe", atau lanjutan setelah film-shotlist.
 ---
 
 # Tahap 4 — Image per scene (ingredients + keyframe)
 
-Baca `.claude/skills/film-studio/references/formats.md` dan `references/flow-guide.md` (bagian Gambar dan Struktur prompt). Input: `01-bible.md` dan `03-shotlist.md`. Output: `films/<slug>/04-keyframes.md`.
+Baca `.claude/skills/film-studio/references/formats.md` dan `.claude/skills/film-studio/references/prompting.md` dan profil generator `references/generators/<Generator>.md` sesuai bible (bagian Gambar dan Struktur prompt). Input: `01-bible.md` dan `03-shotlist.md`. Output: `films/<slug>/04-keyframes.md`.
 
 ## A. Ingredients (dibuat sekali, dipakai di semua shot)
 
@@ -36,7 +36,7 @@ Aturan:
 - Deskripsikan **keadaan awal**, bukan aksi yang sedang terjadi. Kalau shot bercerita "Raka membuka pintu", keyframe-nya "Raka berdiri menghadap pintu, tangan kanan di gagang".
 - Dua karakter dalam satu frame: sebutkan posisi masing-masing dengan jelas ("on the left... on the right...").
 - Baris `Referensi:` menyebut ingredient yang harus diupload bersama prompt (misalnya `CHAR-Raka, LOC-Warung`).
-- Untuk shot yang berakhir di keadaan sangat berbeda (misalnya transisi siang ke malam), boleh tambahkan blok kedua `Frame akhir (opsional)` untuk fitur frame akhir Flow.
+- Untuk shot yang berakhir di keadaan sangat berbeda (misalnya transisi siang ke malam), boleh tambahkan blok kedua `Frame akhir (opsional)` untuk fitur frame akhir (kalau generator mendukung).
 
 ## C. Instruksi ke user
 
@@ -58,4 +58,4 @@ Laporkan per shot: ✅ lolos, atau ❌ beserta masalahnya dan revisi prompt yang
 
 ## Validasi dan gate
 
-Jalankan `python3 .claude/skills/film-studio/scripts/check_film.py films/<slug>` sampai tidak ada ERROR. Minta user generate gambar di Flow. Tahap ini dianggap `approved` setelah keyframe di-review, atau setelah user menyatakan puas. Lanjut ke `film-motion` (prompt motion boleh ditulis sebelum gambar jadi; beri catatan bahwa prompt bisa disesuaikan setelah gambar ada).
+Jalankan `python3 .claude/skills/film-studio/scripts/check_film.py films/<slug>` sampai tidak ada ERROR. Buat paket upload dengan `python3 .claude/skills/film-studio/scripts/film.py handoff films/<slug> --stage keyframes`, lalu minta user generate di platform dan mengunduh hasil ke folder `downloads/` paket itu. Hasilnya dimasukkan dengan `film.py adopt` dan dipilih dengan `film.py select ... --keyframe` (lihat skill `film-edit`). Tahap ini dianggap `approved` setelah keyframe di-review, atau setelah user menyatakan puas. Lanjut ke `film-motion` (prompt motion boleh ditulis sebelum gambar jadi; beri catatan bahwa prompt bisa disesuaikan setelah gambar ada).

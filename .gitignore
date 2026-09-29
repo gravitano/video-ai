@@ -8,3 +8,6 @@ __pycache__/
 # Rendered outputs (bisa di-render ulang dari source)
 **/out/*.mp4
 videos/sdd-reels-45s/SDD_Reels_45s.mp4
+
+# Paket upload & unduhan generator (bisa dibuat ulang dengan film.py handoff; hasil terpilih ada di assets/)
+films/*/handoff/

@@ -7,7 +7,7 @@ Semua file diawali header berikut:
 Status: draft
 ```
 
-`Status` bernilai `draft` atau `approved`. Script `scripts/check_film.py` mem-parse format di bawah, jadi **jangan ubah penanda (`<!-- LOCK:... -->`, kolom tabel, heading `## Sxx`)**.
+`Status` bernilai `draft` atau `approved`. File yang isinya berasal dari user (lihat skill `film-import`) punya baris tambahan `Sumber: user` tepat di bawah `Status`. Script `scripts/check_film.py` mem-parse format di bawah, jadi **jangan ubah penanda (`<!-- LOCK:... -->`, kolom tabel, heading `## Sxx`)**.
 
 ---
 
@@ -25,6 +25,9 @@ Status: draft
 - Batas klip: 8
 - Bahasa dialog: Indonesia
 - Mode narasi: in-video
+- Generator: flow
+- Model video: Veo 3 Fast (draf), Veo 3 Quality (final)
+- Audio native: ya
 
 ## Style
 <!-- LOCK:STYLE -->
@@ -65,9 +68,30 @@ warm mature female narrator voice, Indonesian, gentle and unhurried
 Aturan field:
 - `Rasio`: `16:9` atau `9:16`.
 - `Durasi target`: angka dalam detik.
-- `Batas klip`: durasi maksimum satu generate di Flow (default 8).
-- `Mode narasi`: `in-video` (Veo membacakan narasi di dalam klip) atau `terpisah` (narasi direkam/TTS terpisah lalu digabung saat editing; lebih konsisten untuk narasi panjang).
+- `Batas klip`: durasi maksimum satu generate di generator yang dipilih (default 8).
+- `Mode narasi`: `in-video` (model video membacakan narasi di dalam klip) atau `terpisah` (narasi direkam/TTS terpisah lalu digabung saat editing; lebih konsisten untuk narasi panjang). Wajib `terpisah` kalau `Audio native: tidak`.
+- `Generator`: platform produksi, sesuai nama file profil di `references/generators/` (`flow`, `higgsfield`) atau nama bebas (pakai `generic.md`). Default `flow` kalau field tidak ada.
+- `Model video`: model yang dipakai di platform itu. Opsional, tapi dianjurkan untuk agregator seperti Higgsfield.
+- `Audio native`: `ya` kalau model membuat dialog/SFX di dalam klip, `tidak` kalau klip bisu (dialog dibuat di tahap edit lewat TTS/rekaman + lip-sync). Default `ya`.
 - Nama karakter/lokasi dalam `LOCK:CHAR:<Nama>` / `LOCK:LOC:<Nama>` harus sama persis dengan yang dipakai di kolom shot list.
+
+---
+
+## 02-naskah.md
+
+Format naskah ada di skill `film-naskah`. Tambahan untuk naskah dari user (`Sumber: user`):
+
+- Isi aksi dan dialog adalah milik user. Claude hanya merapikan format, **tidak mengubah kata-kata**.
+- Masalah yang ditemukan Claude ditulis di bagian `## Catatan AI` di akhir file, sebagai tabel usulan:
+
+```markdown
+## Catatan AI
+| # | Scene | Masalah | Usulan | Keputusan |
+|---|---|---|---|---|
+| 1 | 3 | Dialog Ibu 22 kata, tidak muat satu klip 8 dtk | Pecah jadi 2 shot, atau persingkat: "..." | - |
+```
+
+Kolom `Keputusan` diisi user (`terima` / `tolak` / catatan). Usulan hanya diterapkan setelah `terima`.
 
 ---
 
@@ -131,14 +155,55 @@ File: assets/keyframes/S01.png · Referensi: CHAR-Raka, LOC-Terminal
 
 ```markdown
 ## S01 — Raka turun dari bus
-Mode Flow: Frames to Video · Frame awal: assets/keyframes/S01.png · Durasi: 6 dtk
+Mode: Frames · Frame awal: assets/keyframes/S01.png · Durasi: 6 dtk
 Audio: narasi (in-video)
 ```prompt
 ...
 ```
 Narasi terpisah: "..."        ← hanya kalau Mode narasi = terpisah
+Dialog terpisah: Raka: "..."  ← hanya kalau Audio native = tidak (dibuat saat edit: TTS/rekaman + lip-sync)
 Cek take: [ ] wajah konsisten [ ] tangan wajar [ ] tidak ada teks [ ] audio sinkron
 Take terpilih: -
 ```
 
 Di akhir file ada bagian `## Catatan edit` (urutan klip, transisi, musik, overlay teks, file narasi).
+
+Baris `Mode` boleh memakai nama fitur di UI generator (misalnya `Mode Flow: Frames to Video`), asalkan mode generiknya jelas. Kalau `Audio native: tidak`, prompt tidak boleh berisi dialog atau narator; tulis `Silent clip, no dialogue, no voice-over.`
+
+---
+
+## 06-edit.md
+
+Dibuat oleh skill `film-edit`. Dua tabel dibaca oleh `scripts/film.py`, jadi kolomnya harus persis.
+
+```markdown
+# Edit — Pulang
+Status: draft
+
+## Urutan edit
+| Shot | Potong video | Audio | Transisi | Catatan |
+|---|---|---|---|---|
+| S01 | 0-1.7, 2.4-7 | 0-6.3 | cut | buang morph di 1,8–2,3 |
+| S03 | 1-5 | klip | cut | |
+| S02 | 0-6.5 | klip | dissolve 1 | senja ke malam |
+| S04 | 1-6 | mute | cut | |
+
+## Lapisan audio
+| File | Mulai | Volume | Catatan |
+|---|---|---|---|
+| assets/audio/N01.mp3 | 0.5 | 1 | narasi |
+| assets/audio/music.mp3 | 0 | 0.25 | musik, fade out otomatis di akhir |
+
+## Log take
+| Shot | Take | Jenis | File | Generator | Model | Kredit | Status | Catatan |
+|---|---|---|---|---|---|---|---|---|
+| S01 | 1 | klip | assets/clips/S01_t1.mp4 | flow | Veo 3 Fast | 20 | terpilih | |
+```
+
+Aturan kolom:
+- **Urutan edit**: urutan baris = urutan di timeline. Shot boleh diurutkan ulang atau dilewati.
+  - `Potong video`: satu atau beberapa rentang `awal-akhir` (detik, titik atau koma desimal boleh), dipisah `, `. Kosong/`-` = seluruh klip.
+  - `Audio`: `klip` (audio klip mengikuti potongan video), rentang `awal-akhir` dari klip (dipakai utuh walau video dipotong-potong), atau `mute` (bisu; untuk klip tanpa audio native atau audio yang diganti).
+  - `Transisi`: transisi ke shot **berikutnya**: `cut` atau `dissolve <detik>`.
+- **Lapisan audio** (opsional): file audio yang ditumpuk di atas timeline (narasi terpisah, dialog TTS/lip-sync, musik). `Mulai` dalam detik dari awal video; `Volume` 0–1.
+- **Log take**: ditulis oleh `film.py adopt` dan `film.py select`. User boleh mengisi `Kredit` dan `Catatan`. `Status`: `kandidat`, `terpilih`, `ditolak`.

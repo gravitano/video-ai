@@ -1,11 +1,11 @@
 ---
 name: film-motion
-description: Tahap 5 pipeline film AI — menulis prompt image-to-video untuk Google Flow/Veo (05-motion.md) per shot, lengkap dengan dialog, narasi, SFX, arahan suara, checklist take, dan catatan edit. Pakai saat user minta "prompt video", "image to video", "prompt motion", "prompt dialog/narasi", "animasikan keyframe", atau lanjutan setelah film-keyframe.
+description: Tahap 5 pipeline film AI — menulis prompt image-to-video untuk generator video (Flow/Veo, Higgsfield, dll.) (05-motion.md) per shot, lengkap dengan dialog, narasi, SFX, arahan suara, checklist take, dan catatan edit. Pakai saat user minta "prompt video", "image to video", "prompt motion", "prompt dialog/narasi", "animasikan keyframe", atau lanjutan setelah film-keyframe.
 ---
 
 # Tahap 5 — Image → Video + narasi/dialog
 
-Baca `.claude/skills/film-studio/references/formats.md` dan `references/flow-guide.md` (bagian Mode, Audio native, Struktur prompt). Input: `01-bible.md`, `03-shotlist.md`, `04-keyframes.md`, dan gambar di `assets/keyframes/` kalau sudah ada. Output: `films/<slug>/05-motion.md`.
+Baca `.claude/skills/film-studio/references/formats.md` dan `.claude/skills/film-studio/references/prompting.md` dan profil generator `references/generators/<Generator>.md` sesuai bible (bagian Mode, Audio, Struktur prompt; sintaks audio per platform ada di profil). Input: `01-bible.md`, `03-shotlist.md`, `04-keyframes.md`, dan gambar di `assets/keyframes/` kalau sudah ada. Output: `films/<slug>/05-motion.md`.
 
 ## Kalau keyframe sudah ada
 
@@ -35,6 +35,9 @@ Susun dari kolom Audio di shot list:
 - **SFX/ambience**: `Sound: <suara spesifik>.` Selalu tutup dengan `No music.` kecuali user meminta musik di klip.
 - **Timing**: untuk shot yang dimulai dengan aksi, tulis "He speaks after a short pause" supaya dialog tidak terpotong di awal klip.
 
+- **`Audio native: tidak`**: jangan tulis dialog atau narasi di prompt. Tulis `Silent clip, no dialogue, no voice-over.` (SFX juga tidak akan muncul; catat SFX di baris Audio untuk ditambahkan saat edit). Dialog dipindah ke baris `Dialog terpisah: <Nama>: "<dialog>"` di bawah blok prompt, dan gerak mulut ditulis di prompt (`he speaks softly, lips moving naturally`) supaya lip-sync di tahap edit lebih mudah.
+- **Naskah `Sumber: user`**: dialog dan narasi disalin **persis** dari `02-naskah.md`. Kalau terlalu panjang untuk durasi shot, jangan dipersingkat sendiri; ajukan lewat Catatan AI di naskah.
+
 Batas panjang: jumlah kata dalam tanda kutip ≤ durasi shot × 2,2. Kalau lebih, persingkat dialognya (beri tahu user bahwa naskah berubah) atau pecah shot-nya.
 
 ## Isi file
@@ -61,5 +64,5 @@ Kalau mode narasi `terpisah`, tawarkan untuk membuat file TTS (misalnya `edge-tt
 
 1. `python3 .claude/skills/film-studio/scripts/check_film.py films/<slug>`: perbaiki semua ERROR, dan tinjau WARN.
 2. Delegasikan ke subagent `film-continuity-reviewer` untuk review menyeluruh, lalu terapkan temuan yang valid.
-3. Serahkan ke user dengan urutan kerja di Flow: buka Scenebuilder → per shot pilih mode → upload frame/ingredient → tempel prompt → generate 2–4 take (pakai model Fast dulu) → simpan `assets/clips/Sxx_t1.mp4` dan seterusnya → take terpilih disalin sebagai `Sxx.mp4`.
-4. Kalau user melaporkan take yang gagal, diagnosis dengan tabel "Masalah umum" di flow-guide, lalu revisi prompt shot itu saja.
+3. Serahkan ke user: buat paket upload dengan `python3 .claude/skills/film-studio/scripts/film.py handoff films/<slug>`, jelaskan urutan kerja di UI dari profil generator (pilih mode → upload frame/ingredient → tempel prompt → generate 2–4 take, model murah dulu), dan minta hasil diunduh ke `downloads/` dengan nama diawali ID shot. Lanjut ke `film-edit` untuk adopt, review take, dan rough cut.
+4. Kalau user melaporkan take yang gagal, diagnosis dengan tabel "Masalah umum" di `references/prompting.md`, lalu revisi prompt shot itu saja.
