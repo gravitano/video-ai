@@ -1,17 +1,23 @@
 ---
 name: film-naskah
-description: Tahap 2 pipeline film AI — menulis naskah (02-naskah.md) per scene dengan aksi, dialog, dan narasi dari brief dan bible yang sudah disetujui, dengan panjang dialog yang realistis untuk klip Google Flow. Pakai saat user minta "tulis naskah", "bikin script/skenario", "revisi dialog", atau lanjutan setelah film-ide.
+description: Tahap 2 pipeline film AI — menulis naskah (02-naskah.md) per scene dengan aksi, dialog, dan narasi dari brief dan bible yang sudah disetujui, dengan panjang dialog yang realistis untuk klip video AI. Juga merevisi naskah; naskah milik user (Sumber: user) hanya diubah lewat usulan yang disetujui. Pakai saat user minta "tulis naskah", "bikin script/skenario", "revisi dialog", atau lanjutan setelah film-ide.
 ---
 
 # Tahap 2 — Brief → Naskah
 
 Input: `00-brief.md` dan `01-bible.md` (seharusnya `Status: approved`; kalau masih draft, konfirmasi dulu ke user). Output: `films/<slug>/02-naskah.md`.
 
+## Naskah milik user
+
+Kalau user sudah punya naskah, pakai skill `film-import`, bukan skill ini. Kalau `02-naskah.md` ber-header `Sumber: user`:
+- **Jangan menulis ulang.** Revisi yang diminta user diterapkan persis seperti arahannya.
+- Temuan Claude (dialog terlalu panjang, aksi berisiko, durasi tidak pas) ditambahkan sebagai baris baru di `## Catatan AI` dengan usulan konkret, lalu diterapkan hanya setelah user mengisi `Keputusan: terima`.
+
 ## Hitung anggaran dulu
 
 - **Jumlah shot kasar** = durasi target ÷ ±5 detik (film AI terasa hidup dengan shot 3–8 detik). Contoh: 90 detik → 15–20 shot.
 - **Anggaran kata bicara** (dialog + narasi) ≈ durasi total × 1,5 kata/detik. Jangan semua detik diisi suara; film butuh jeda. 90 detik → maksimal ±135 kata.
-- Satu baris dialog sebaiknya **≤ 14 kata** supaya muat dalam satu klip Flow bersama aksinya. Kalimat panjang dipecah ke beberapa shot atau diganti dengan aksi.
+- Satu baris dialog sebaiknya **≤ 14 kata** supaya muat dalam satu klip bersama aksinya. Kalimat panjang dipecah ke beberapa shot atau diganti dengan aksi.
 
 ## Struktur cerita
 

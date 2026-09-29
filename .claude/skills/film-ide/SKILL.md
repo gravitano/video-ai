@@ -1,6 +1,6 @@
 ---
 name: film-ide
-description: Tahap 1 pipeline film AI — mengubah ide mentah menjadi creative brief (00-brief.md) dan bible visual (01-bible.md) berisi LOCK style, karakter, suara, dan lokasi untuk Google Flow. Pakai saat user punya ide film/video pendek dan ingin mulai, atau bilang "kembangkan ide ini", "bikin konsep film", "bikin karakter/bible". Biasanya dipanggil oleh film-studio.
+description: Tahap 1 pipeline film AI — mengubah ide mentah menjadi creative brief (00-brief.md) dan bible visual (01-bible.md) berisi LOCK style, karakter, suara, dan lokasi untuk generator video (Google Flow, Higgsfield, dll.). Kalau user sudah punya naskah/brief sendiri, pakai film-import. Pakai saat user punya ide film/video pendek dan ingin mulai, atau bilang "kembangkan ide ini", "bikin konsep film", "bikin karakter/bible". Biasanya dipanggil oleh film-studio.
 ---
 
 # Tahap 1 — Ide → Brief + Bible
@@ -15,6 +15,7 @@ Ambil dari pesan user sebanyak mungkin. Tanyakan **sekaligus dalam satu pesan** 
 - **Durasi dan platform**: short movie 1–3 menit (16:9) atau Reels/Shorts 30–60 detik (9:16)
 - **Gaya visual**: live-action sinematik, animasi 3D, anime, claymation, dll.
 - **Bahasa dialog** (default Indonesia) dan **mode narasi**: `in-video` atau `terpisah`
+- **Generator dan model**: Google Flow, Higgsfield (model apa), atau lainnya. Baca profilnya di `.claude/skills/film-studio/references/generators/` untuk mengisi `Batas klip` dan `Audio native`.
 
 Sisanya boleh diasumsikan. Tulis asumsi itu di brief dengan label **Asumsi**.
 
@@ -30,7 +31,7 @@ Isi:
 - Referensi rasa (film atau gaya yang mirip), opsional
 - Asumsi
 
-Tawarkan **3 variasi logline** kalau idenya masih kabur, lalu minta user memilih sebelum lanjut.
+Tawarkan **3 variasi logline** kalau idenya masih kabur, lalu minta user memilih sebelum lanjut. Kalau user sudah menulis sebagian (logline, sinopsis, deskripsi karakter), pakai kata-katanya apa adanya; isi yang ditambahkan Claude diberi label **(usulan AI)**.
 
 ## 3. Tulis `films/<slug>/01-bible.md`
 
@@ -42,6 +43,7 @@ Ikuti format di `formats.md`. Panduan isi:
 - **LOCK:STYLE**: medium (film/animasi), lensa atau film stock, palet warna, pencahayaan, grain/tekstur. Jangan memasukkan komposisi per shot di sini.
 - **LOCK:LOC**: tempat, era, benda khas, sumber cahaya. Waktu (siang/malam) boleh masuk kalau lokasi selalu dipakai di waktu yang sama. Kalau tidak, waktu ditulis per shot.
 - Semua isi LOCK ditulis dalam **bahasa Inggris**. Penjelasan untuk manusia (peran, busur karakter) ditulis dalam bahasa Indonesia di luar blok.
+- Isi field Format lengkap sesuai `formats.md`, termasuk `Generator`, `Model video`, dan `Audio native`. Kalau `Audio native: tidak`, `Mode narasi` wajib `terpisah`.
 - Tutup dengan **Aturan tetap**: minimal "tanpa teks/logo/subtitle di gambar dan video".
 
 Buat juga folder aset: `mkdir -p films/<slug>/assets/{ingredients,keyframes,clips,audio}`.
