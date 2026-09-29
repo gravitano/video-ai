@@ -1,5 +1,5 @@
 # SDD Reels 45s — versi persona Sari (pemandu), anime style.
-persona: ../personas/sari
+persona: ../../personas/sari
 project: sdd-sari
 brief:
   topic: Spec Driven Development
